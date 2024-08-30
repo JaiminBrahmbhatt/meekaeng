@@ -7,8 +7,14 @@ const Topbar = () => {
       <div className="max-container ">
         <div className="">
           <div className="flex gap-x-4 justify-around md:justify-end">
-            <div className="flex items-center gap-x-2"><img src="/socials/icon-email-top.png" alt="email" width={32} height={32}></img><div className="text-white">Info@MeekaEng.com</div></div>
-            <div className="flex items-center gap-x-2"><img src="/socials/icon-phone-top.png" alt="phone" width={32} height={32}></img><div className="text-white">361-434-0654</div></div>
+          <div className="flex items-center gap-x-2">
+            <img src="/socials/icon-email-top.png" alt="email" width={32} height={32}></img>
+            <a href="mailto:Info@MeekaEng.com" className="text-white">Info@MeekaEng.com</a>
+          </div>
+          <div className="flex items-center gap-x-2">
+            <img src="/socials/icon-phone-top.png" alt="phone" width={32} height={32}></img>
+            <a href="tel:+13614340654" className="text-white">361-434-0654</a>
+          </div>
           </div>
         </div>
       </div>
