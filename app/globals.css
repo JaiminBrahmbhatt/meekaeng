@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fixed {
+  position: fixed;
+}
+
+:root {
+  --black: #000000;
+  --dark_grey: #000000;
+  --grey: #717171;
+  --light_grey: #89939e;
+  --grey_blue: #abbed1;
+  --silver: #f5f7fa;
+  --white: #ffffff;
+  --primary: #224194;
+  --secondary: #88c64b;
+  --info: #2194f3;
+  --shade_1: #43a046;
+  --shade_2: #388e3b;
+  --shade_3: #237d31;
+  --shade_4: #1b5e1f;
+  --shade_5: #103e13;
+  --tint_1: #66bb69;
+  --tint_2: #81c784;
+  --tint_3: #a5d6a7;
+  --tint_4: #c8e6c9;
+  --tint_5: #e8f5e9;
+  --warning: #fbc02d;
+  --error: #e53835;
+  --success: #2e7d31;
+  --white_10: rgba(255, 255, 255, 0.1);
+  --white_20: rgba(255, 255, 255, 0.2);
+}
+
+@layer base {
+  /* headings */
+  h1 {
+    @apply text-64 leading-76 font-semibold;
+  }
+  h2 {
+    @apply font-semibold text-36 leading-44;
+  }
+  h3 {
+    @apply font-semibold text-28 leading-9;
+  }
+  h4 {
+    @apply font-semibold text-xl leading-7;
+  }
+
+  /* regular */
+  .regular_1 {
+    @apply font-normal text-lg leading-7;
+  }
+  .regular_2 {
+    @apply font-normal text-base leading-6;
+  }
+  .regular_3 {
+    @apply font-normal text-sm leading-5;
+  }
+  .regular_4 {
+    @apply font-normal text-xs leading-4;
+  }
+
+  /* medium */
+  .medium_1 {
+    @apply font-medium text-lg leading-7;
+  }
+  .medium_2 {
+    @apply font-medium text-base leading-6;
+  }
+  .medium_3 {
+    @apply font-medium text-sm leading-5;
+  }
+  .medium_4 {
+    @apply font-medium text-xs leading-4;
+  }
+}
+
+@layer components {
+  /* Buttons */
+
+  /* primary */
+  .primary_button_normal {
+    @apply max-h-[56px] py-4 px-8 text-lg bg-primary text-white rounded-md hover:opacity-95 focus:border-grey active:bg-shade_2 disabled:bg-silver disabled:text-grey_blue;
+  }
+  .primary_button_medium {
+    @apply max-h-[48px] py-[14px] px-8 text-base bg-primary text-white rounded-md hover:opacity-95 focus:border-grey active:bg-shade_2 disabled:bg-silver disabled:text-grey_blue;
+  }
+  .primary_button_small {
+    @apply max-h-[32px] py-2 px-6 text-sm bg-primary text-white rounded-md hover:opacity-95 focus:border-grey active:bg-shade_2 disabled:bg-silver disabled:text-grey_blue;
+  }
+
+  /* secondary */
+  .secondary_button_normal {
+    @apply max-h-[56px] py-4 px-8 text-lg bg-white text-primary border border-primary rounded-md hover:bg-silver focus:border-light_grey active:border-none active:bg-silver disabled:bg-silver disabled:text-grey_blue disabled:border-none;
+  }
+  .secondary_button_medium {
+    @apply max-h-[48px] py-[14px] px-8 text-base bg-white text-primary border border-primary rounded-md hover:bg-silver focus:border-light_grey disabled:bg-silver disabled:text-grey_blue disabled:border-none;
+  }
+  .secondary_button_small {
+    @apply max-h-[32px] py-2 px-6 text-sm bg-white text-primary border border-primary rounded-md hover:bg-silver focus:border-light_grey disabled:bg-silver disabled:text-grey_blue disabled:border-none;
+  }
+
+  /* tertiary */
+  .tertiary_button_normal {
+    @apply max-h-[56px] py-4 px-8 text-lg bg-transparent text-primary rounded-md hover:bg-silver focus:border-dark_grey active:bg-tint_5 disabled:bg-silver disabled:text-grey_blue disabled:border-none;
+  }
+  .tertiary_button_medium {
+    @apply max-h-[48px] py-[14px] px-8 text-base bg-transparent text-primary rounded-md hover:bg-silver focus:border-dark_grey active:bg-tint_5 disabled:bg-silver disabled:text-grey_blue disabled:border-none;
+  }
+  .tertiary_button_small {
+    @apply max-h-[32px] py-2 px-6 text-sm bg-transparent text-primary rounded-md hover:bg-silver focus:border-dark_grey active:bg-tint_5 disabled:bg-silver disabled:text-grey_blue disabled:border-none;
+  }
+
+  /* Links */
+
+  .link_normal {
+    @apply text-lg font-normal leading-6 text-primary transition-all child-span:bg-primary child-span:active:bg-shade_2 active:text-shade_2;
+  }
+  .link_medium {
+    @apply text-base font-normal leading-5 text-primary transition-all child-span:bg-primary child-span:active:bg-shade_2 active:text-shade_2;
+  }
+  .link_small {
+    @apply text-sm font-normal leading-4 text-primary transition-all child-span:bg-primary child-span:active:bg-shade_2 active:text-shade_2;
+  }
+
+  /* Cards */
+  .community_card {
+    @apply  rounded-md flex flex-col justify-start items-center text-xl px-4;
+  }
+}
+
+@layer utilities {
+  .max-container {
+    @apply max-w-[1520px] m-auto;
+  }
+}
