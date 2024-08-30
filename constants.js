@@ -179,17 +179,20 @@ export const FOOTER_SOCIALS_ICONS = [
     title: "Info@MeekaEng.com",
     icon: "/socials/icon-email-bottom.png",
     alt: "alt",
+    href: "mailto:Info@MeekaEng.com", // Add href for email
   },
   {
     id: 2,
     title: "361-434-0654",
     icon: "/socials/icon-phone-bottom.png",
     alt: "alt",
+    href: "tel:+13614340654", // Add href for phone number
   },
   // {
   //   id: 3,
   //   title: "MeekaEng@linkedin.com",
   //   icon: "/socials/icon-linkdin-bottom.png",
   //   alt: "alt",
+  //   href: "https://www.linkedin.com/in/meekeng/", // Add href for LinkedIn
   // },
 ];
