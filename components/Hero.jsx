@@ -1,10 +1,9 @@
+"use client";
 import React, { useState, useEffect } from "react";
-
 import Image from "next/image";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const slides = [
     { image: "/banners/header-banner-01.jpg", title: "Slide 1" },
     { image: "/banners/header-banner-02.jpg", title: "Slide 2" },
@@ -25,21 +24,13 @@ const Hero = () => {
     setCurrentSlide(index);
   };
 
-  const handlePrevClick = () => {
-    setCurrentSlide((prevSlide) => prevSlide - 1);
-  };
-
-  const handleNextClick = () => {
-    setCurrentSlide((prevSlide) => prevSlide + 1);
-  };
-
   return (
     <section className="main-container flex justify-center">
       <div className="relative w-full h-[840px] overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`w-full h-full transition-opacity duration-1000 ${
+            className={` w-full h-full transition-opacity duration-1000 ${
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -47,7 +38,7 @@ const Hero = () => {
               src={slide.image}
               alt={slide.title}
               layout="fill"
-              objectFit="cover"
+              objectFit="cover"             
             />
           </div>
         ))}
@@ -63,44 +54,6 @@ const Hero = () => {
             />
           ))}
         </div>
-        <button
-          onClick={handlePrevClick}
-          className="absolute top-1/2 left-0 transform -translate-y-1/2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-8-9 8-9"
-            />
-          </svg>
-        </button>
-        <button
-          onClick={handleNextClick}
-          className="absolute top-1/2 right-0 transform -translate-y-1/2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
       </div>
     </section>
   );
