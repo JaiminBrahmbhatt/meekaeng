@@ -21,7 +21,7 @@ const Navbar = () => {
     <div className="px-4 sm:px-8 md:px-24 lg:px-36 xl:px-48 flex flex-col z-50 shadow-md relative">
       <div className="w-full">
         <nav className="max-container bg-white flex justify-between items-center py-4">
-          <Image src="/logo.jpg" alt="Logo" width={400} height={300} className="hidden sm:block"/>
+          <Image src="/logo.jpg" alt="Logo" width={300} height={200} />
           <ul
             className={`lg:flex ${
               isOpen
