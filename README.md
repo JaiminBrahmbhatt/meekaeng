@@ -3,7 +3,7 @@
 - Always work on the `dev` branch for changes.
 - Create a new branch from `dev`, make changes, and create a pull request (PR) to merge into `dev`.
 - Commit approved changes to `dev` cycle, which deploys to Vercel preview environment for testing.
-- If changes look good in preview, create PR to merge into `prod` branch for production deployment.
+- If changes look good in preview, create PR to merge into `main` branch for production deployment.
 
 ## Getting Started
 
