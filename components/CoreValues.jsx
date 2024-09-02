@@ -4,7 +4,7 @@ import CommunityCard from "./CommunityCard";
 
 const CoreValues = () => {
   return (
-    <section className="bg-white id="feature">
+    <section className="bg-white" id="feature">
       <div className="container px-6 py-10 mx-auto">
         <div className="flex items-center justify-center mb-8">
           <svg width="18" height="18" viewBox="0 0 16 16" className="mr-0">
