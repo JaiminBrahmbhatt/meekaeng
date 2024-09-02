@@ -19,7 +19,7 @@ const CoreValues = () => {
               fill="#88c64b"
             />
           </svg>
-          <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white mx-2">
+          <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl mx-2">
             Core Values
           </h1>
           <svg width="18" height="18" viewBox="0 0 16 16" className="mr-0">
@@ -40,18 +40,18 @@ const CoreValues = () => {
           {COMMUNITY_CARDS_INFO.map((card) => (
             <CommunityCard key={card.id}>
               <div className="space-y-3 text-center">
-                <span className="inline-block p-3 text-blue-500 bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
+                <span className="inline-block p-3 text-blue-500 bg-blue-100 rounded-full">
                   <img src={card.icon} alt={card.alt} width={72} height={72} />
                 </span>
-                <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">
+                <h1 className="text-xl font-semibold text-gray-700 capitalize">
                   {card.title}
                 </h1>
-                <p className="text-gray-500 dark:text-gray-300">
+                <p className="text-gray-500">
                   {card.text}
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center -mx-1 text-sm text-blue-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-blue-600 dark:hover:text-blue-500"
+                  className="inline-flex items-center -mx-1 text-sm text-blue-500 capitalize transition-colors duration-300 transform hover:underline hover:text-blue-600"
                 >
                   <svg
                     className="w-4 h-4 mx-1 rtl:-scale-x-100"
