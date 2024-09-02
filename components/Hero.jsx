@@ -30,7 +30,7 @@ const Hero = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={` w-full h-full transition-opacity duration-1000 ${
+            className={`w-full h-full transition-opacity duration-1000 ${
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -38,17 +38,18 @@ const Hero = () => {
               src={slide.image}
               alt={slide.title}
               layout="fill"
-              objectFit="cover"             
+              objectFit="cover"
             />
           </div>
         ))}
+        {/* Slide Indicator */}
         <div className="absolute bg-secondary bottom-[100px] left-1/2 transform -translate-x-1/2 flex space-x-2 rounded-full py-3 px-7">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-4 h-4 rounded-full ${
-                index === currentSlide ? 'bg-primary' : 'bg-white/50'
+              className={`w-4 h-4 rounded-full mx-1 ${
+                index === currentSlide ? 'bg-primary' : 'bg-white'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
