@@ -44,13 +44,13 @@ const Hero = () => {
         ))}
 
         {/* Slide Indicator */}
-        <div className="absolute bg-green-500 bottom-[100px] left-1/2 transform -translate-x-1/2 flex space-x-2 rounded-full py-2 px-5">
+        <div className="absolute bg-secondary bottom-[100px] left-1/2 transform -translate-x-1/2 flex space-x-2 rounded-full py-2 px-5">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full mx-1 ${
-                index === currentSlide ? 'bg-blue-500' : 'bg-gray-200'
+              className={`w-4 h-4 rounded-full ${
+                index === currentSlide ? 'bg-primary' : 'bg-gray-200'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
