@@ -49,7 +49,7 @@ const Hero = () => {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-4 h-4 rounded-full mx-1 ${
-                index === currentSlide ? 'bg-info' : 'bg-white'
+                index === currentSlide ? 'bg-primary' : 'bg-white'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
