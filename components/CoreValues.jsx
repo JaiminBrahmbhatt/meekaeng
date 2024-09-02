@@ -4,7 +4,7 @@ import CommunityCard from "./CommunityCard";
 
 const CoreValues = () => {
   return (
-    <section className="bg-white dark:bg-gray-900" id="feature">
+    <section className="bg-white id="feature">
       <div className="container px-6 py-10 mx-auto">
         <div className="flex items-center justify-center mb-8">
           <svg width="18" height="18" viewBox="0 0 16 16" className="mr-0">
@@ -36,11 +36,6 @@ const CoreValues = () => {
           </svg>
         </div>
 
-        <p className="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300 text-center">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
-          quam voluptatibus
-        </p>
-
         <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
           {COMMUNITY_CARDS_INFO.map((card) => (
             <CommunityCard key={card.id}>
@@ -58,7 +53,6 @@ const CoreValues = () => {
                   href="#"
                   className="inline-flex items-center -mx-1 text-sm text-blue-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-blue-600 dark:hover:text-blue-500"
                 >
-                  <span className="mx-1">read more</span>
                   <svg
                     className="w-4 h-4 mx-1 rtl:-scale-x-100"
                     fill="currentColor"
