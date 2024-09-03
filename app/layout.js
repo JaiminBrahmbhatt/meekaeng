@@ -1,4 +1,4 @@
-import { Outfit } from "next/font/google";
+import { Afacad } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ScrollToTopButton from '../components/ScrollToTopButton';
