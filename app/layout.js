@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={outfit.className}>
+      <body className={inter.className}>
         <Topbar/>
         <Navbar />
         <main className="overflow-hidden text-xl relative">{children}</main>
