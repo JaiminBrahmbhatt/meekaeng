@@ -6,7 +6,6 @@ import Topbar from "@/components/Topbar";
 
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',
 })
 
 export const metadata = {
