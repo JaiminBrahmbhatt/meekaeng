@@ -53,7 +53,7 @@ const Navbar = () => {
                 <a
                   href={`#${link.id}`}
                   onClick={(e) => handleScroll(e, link.id)}
-                  className="block py-2 px-3 text-gray-800 text-lg font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-500 md:p-0 whitespace-nowrap"
+                  className="block py-2 px-3 text-gray-800 text-lg font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-500 md:p-0 whitespace-nowrap"
                 >
                   {link.title}
                 </a>
