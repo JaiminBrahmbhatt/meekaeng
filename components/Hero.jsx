@@ -37,9 +37,11 @@ const Hero = () => {
             <Image
               src={slide.image}
               alt={slide.title}
-              layout="fill"
-              objectFit="cover"
-            />
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover"
+              }} />
           </div>
         ))}
         {/* Slide Indicator */}

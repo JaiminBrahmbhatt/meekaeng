@@ -21,7 +21,15 @@ const Navbar = () => {
     <nav className="bg-white w-full border-b border-gray-200 shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Image src="/logo.jpg" alt="Logo" width={300} height={200} />
+          <Image
+            src="/logo.jpg"
+            alt="Logo"
+            width={300}
+            height={200}
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </a>
         <div className="flex md:order-2">
           <button
