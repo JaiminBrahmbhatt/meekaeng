@@ -11,37 +11,38 @@ export const COMMUNITY_CARDS_INFO = [
     icon: "/icons/icon-safety.png",
     alt: "people",
     title: "Safety",
-    text: " Our top priority is the safety of our employees, customers, and the community. We are dedicated to maintaining a safe working environment and ensuring all operations are conducted with the highest safety standards.",
+    text: "Our top priority is ensuring the safety of everyone involved. We are dedicated to maintaining a secure environment and conducting operations with the highest safety standards.",
   },
   {
     id: 1,
     icon: "/icons/icon-integrity.png",
     alt: "building",
     title: "Integrity",
-    text: " We are committed to upholding the highest honesty, transparency, and ethical conduct in every action and decision. Our integrity is the foundation of trust with our clients, partners, and communities.",
+    text: "We uphold the highest standards of honesty and transparency in every action and decision. Our steadfast commitment to integrity builds deep trust with clients, partners, and communities.",
   },
   {
     id: 2,
     icon: "/icons/icon-innovation.png",
     alt: "hands",
     title: "Innovation",
-    text: " We foster a culture of creativity and continuous improvement, driving the development of innovative solutions that meet the evolving needs of the Oil and Gas industry. Our commitment to innovation ensures that we stay ahead in a competitive landscape.",
+    text: "We nurture creativity and continuous improvement, driving the development of innovative solutions for the evolving Oil and Gas industry. Our commitment to innovation keeps us ahead in a competitive landscape.",
   },
   {
     id: 3,
     icon: "/icons/icon-collaboration.png",
     alt: "hands",
     title: "Collaboration",
-    text: " We believe in the power of teamwork, open communication, and cooperation. By working together across departments and with our external partners, we deliver superior results that benefit all stakeholders.",
+    text: "We believe in teamwork and open communication. By working together across departments and with partners, we deliver superior results that benefit all stakeholders.",
   },
   {
     id: 4,
     icon: "/icons/icon-customer-focus.png",
     alt: "hands",
     title: "Customer Focus",
-    text: " We place our customers at the heart of everything. We build long-term relationships and deliver exceptional value by understanding their needs and striving to exceed their expectations.",
+    text: "Our customers are at the heart of everything we do. We build lasting relationships and strive to exceed expectations by understanding and meeting their needs.",
   },
 ];
+
 
 export const PROJECTS_INFO = [
   {
@@ -94,9 +95,9 @@ export const PROJECTS_INFO = [
   },
   {
     id: 4,
-    name: "Dense Phase Ethane Energy Reduction Project",
+    name: "Dense Phase Ethane Energy Reduction",
     text: {
-      title: "Dense Phase Ethane Energy Reduction Project",
+      title: "Dense Phase Ethane Energy Reduction",
       description: [
         "A conceptual Study was performed to define the scope and estimate Gate 1's $90M for the Site’s GHG Reduction goal for 2030.",
         "FEED and Detail Engineering for the Tie-Ins project to be executed during an upcoming outage."
@@ -136,7 +137,7 @@ export const SERVICES_INFO = [
         "Fire-Water System Design",
         "Surge Analysis and Pipeline Hydraulics",
         "Technical Bid Evaluation and Vendor Document Review",
-        "Pumps, Line Hydraulics Calculation and Specifications",     
+        "Pumps, Line Hydraulics Calculation and Specifications",
       ]
     },
   },
