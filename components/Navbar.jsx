@@ -18,11 +18,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 shadow-md">
+    <nav className="bg-white w-full border-b border-gray-200 shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Image src="/logo.jpg" alt="Logo" width={40} height={40} className="h-8 w-8" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap">YourBrand</span>
+          <Image src="/logo.jpg" alt="Logo" width={300} height={200} />
         </a>
         <div className="flex md:order-2">
           <button
