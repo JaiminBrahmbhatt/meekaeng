@@ -40,9 +40,7 @@ const CoreValues = () => {
           {COMMUNITY_CARDS_INFO.map((card) => (
             <CommunityCard key={card.id}>
               <div className="space-y-3 text-center">
-                <span className="inline-block p-3 text-blue-500 bg-blue-100 rounded-full">
-                  <img src={card.icon} alt={card.alt} width={72} height={72} />
-                </span>
+                <img src={card.icon} alt={card.alt} width={72} height={72} />
                 <h1 className="text-xl font-semibold text-gray-700 capitalize">
                   {card.title}
                 </h1>
