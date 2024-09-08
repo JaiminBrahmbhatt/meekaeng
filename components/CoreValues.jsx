@@ -46,7 +46,7 @@ const CoreValues = () => {
                 <h1 className="text-xl font-semibold text-gray-700 capitalize">
                   {card.title}
                 </h1>
-                <p className="text-gray-500">
+                <p className="text-gray-500 text-justify md:text-center">
                   {card.text}
                 </p>
               </div>
