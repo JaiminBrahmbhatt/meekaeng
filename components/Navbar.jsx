@@ -40,14 +40,20 @@ const Navbar = () => {
             )}
           </button>
         </div>
-        <div className={`lg:flex ${isOpen ? "block" : "hidden"} lg:flex-row lg:space-x-8 items-center w-full lg:w-auto md:order-1`}>
-          <ul className="flex flex-col lg:flex-row lg:space-x-8 mt-4 lg:mt-0">
+        <div
+          className={`lg:flex ${isOpen ? "flex" : "hidden"} lg:flex-row lg:space-x-8 items-center w-full lg:w-auto md:order-1`}
+        >
+          <ul
+            className={`flex flex-col lg:flex-row lg:space-x-8 mt-4 lg:mt-0 w-full lg:w-auto ${
+              isOpen ? "items-center justify-center text-center" : ""
+            }`}
+          >
             {NAV_LINKS.map((link) => (
-              <li key={link.id}>
+              <li key={link.id} className="w-full">
                 <a
                   href={`#${link.id}`}
                   onClick={(e) => handleScroll(e, link.id)}
-                  className="block py-2 px-3 text-gray-900 text-lg font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                  className="block py-2 px-3 text-gray-900 text-lg font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:bg-primary md:p-0"
                 >
                   {link.title}
                 </a>
