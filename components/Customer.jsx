@@ -5,7 +5,7 @@ const Customer = () => {
       <div className="max-container">
         <div className="flex flex-col justify-between gap-4 xl:flex-row xl:m-0 items-center">
           <div className="w-full">
-          <h3 className="text-black mb-2 font-bold">Vishal Brahmbhatt -  President & Founder</h3>
+          <h3 className="text-black mb-2 font-bold">Vishal Brahmbhatt, P.E -  President & Founder</h3>
           <div className="regular_2 text-black text-xl">
           <p className="mb-4">Vishal is a seasoned Professional Engineer with over two decades of expertise in the oil & gas and petrochemical sectors. His impressive career includes leadership roles at industry giants such as ExxonMobil, Wood, Foster Wheeler, and Richard EPC.</p>
           <p>Vishal has excelled in contracting and plant operations, bringing deep knowledge and hands-on experience to every project life cycle phase. His technical understanding spans diverse cutting-edge technologies, including Refining, Gasification, Syngas, Gas to Liquid, Olefins Ethylene Cracking, and Polyethylene.</p>
