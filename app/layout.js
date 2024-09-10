@@ -1,9 +1,12 @@
-import { Outfit } from "next/font/google";
+import { Outfit } from 'next/font/google'
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import Topbar from "@/components/Topbar";
-const outfit = Outfit({ subsets: ["latin"] });
+
+const outfit = Outfit({
+  subsets: ['latin'],
+})
 
 export const metadata = {
   title: "MeekaEng",

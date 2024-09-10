@@ -26,19 +26,25 @@ const ScrollToTopButton = () => {
     });
   };
 
-  return (
-    <>
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-5 right-5 z-50"
-          aria-label="Scroll to top"
-        >
-            <Image src={scroll.image} alt="Scroll to top" width={40} height={40}/>
-        </button>
-      )}
-    </>
-  );
+  return <>
+    {isVisible && (
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-5 right-5 z-50"
+        aria-label="Scroll to top"
+      >
+          <Image
+            src={scroll.image}
+            alt="Scroll to top"
+            width={40}
+            height={40}
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
+      </button>
+    )}
+  </>;
 };
 
 export default ScrollToTopButton;

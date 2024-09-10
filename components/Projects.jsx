@@ -1,70 +1,94 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { PROJECTS_INFO } from "@/constants";
 
 const Projects = () => {
-  const [openProjectId, setOpenProjectId] = useState(null);
-
-  const toggleProject = (id) => {
-    setOpenProjectId(prevId => prevId === id ? null : id);
-  };
-  return (
-    <section className="flex flex-col text-center py-16 bg-gray-100 relative" id="projects">
-      <div className="flex items-center justify-center mb-8">
-        <svg width="18" height="18" viewBox="0 0 16 16" className="mr-0">
-          <path d="M8 1 Q7 0 6 1 L1 6 Q0 7 1 8 L6 13 Q7 14 8 13 L13 8 Q14 7 13 6 L8 1 Z" fill="#224194" />
-        </svg>
-        <svg width="18" height="18" viewBox="0 0 16 16" className="mr-0">
-          <path d="M8 1 Q7 0 6 1 L1 6 Q0 7 1 8 L6 13 Q7 14 8 13 L13 8 Q14 7 13 6 L8 1 Z" fill="#88c64b" />
-        </svg>
-        <h2 className="text-primary mx-2 font-medium">Projects</h2>
-        <svg width="18" height="18" viewBox="0 0 16 16" className="ml-0">
-          <path d="M8 1 Q7 0 6 1 L1 6 Q0 7 1 8 L6 13 Q7 14 8 13 L13 8 Q14 7 13 6 L8 1 Z" fill="#88c64b" />
-        </svg>
-        <svg width="18" height="18" viewBox="0 0 16 16" className="ml-0">
-          <path d="M8 1 Q7 0 6 1 L1 6 Q0 7 1 8 L6 13 Q7 14 8 13 L13 8 Q14 7 13 6 L8 1 Z" fill="#224194" />
-        </svg>
-      </div>
-      {PROJECTS_INFO.map((project) => (
-      <div key={project.id} className="mb-4">
-        <button
-          className="w-full text-left font-bold flex justify-between items-center text-white py-2 px-4 sm:px-8 md:px-24 lg:px-48 bg-secondary"
-          onClick={() => toggleProject(project.id)}
-        >
-          <div className="max-container w-full flex justify-between">
-            <div>{project.name}</div>
-            <div className="text-sm">{openProjectId === project.id ? '▼' : '▶'}</div> 
-          </div>
-        </button>
-        <div 
-          className={`overflow-hidden transition-all duration-500 ease-in-out ${
-            openProjectId === project.id ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+  const ProjectItem = ({ project, isExpanded, onToggle }) => {
+    return (
+      <div
+        className={`mb-4 p-6 rounded-xl transition-all duration-300 ${isExpanded ? 'bg-green-50' : 'bg-gray-100 hover:bg-green-200'
           }`}
-        >
-          <div className="px-4 sm:px-8 md:px-24 lg:px-48">
-            <div className="max-container py-4 text-left text-black">
-              {project.text.description.map((desc, index) => (
-                <div key={index} className="text-black flex items-baseline">
-                  <p className="inline text-[10px] mr-1">▶</p>{desc}
-                </div>
-              ))}
-              <div className="flex justify-center mx-auto mt-4">
-                <img src={project.src} alt={project.name} width={900} height={400} objectFit="cover" layout="responsive" className="border-4 border-solid border-[#88c64b] rounded-tl-[100px] rounded-br-[100px]"/>
+        onClick={onToggle}
+      >
+        <div className="flex justify-between items-center cursor-pointer">
+          <h2 className="text-xl font-bold md:text-2xl">{project.name}</h2>
+          <span className="text-green-500 text-base md:text-lg">{String(project.id + 1).padStart(2, '0')}</span>
+        </div>
+        {isExpanded && (
+          <div className="mt-4">
+            <p className="text-gray-600 mb-6 text-base md:text-lg">{project.summary}</p>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+              <div className="flex flex-col">
+                <ul className="list-none space-y-4 text-gray-600 text-lg md:text-xl">
+                  {project.text.description.map((desc, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="mr-3 text-green-500 w-6 h-6"> ➜ </span>
+                      <span>{desc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex items-center justify-center">
+                <img
+                  src={project.src}
+                  alt={project.name}
+                  className="w-full h-auto max-h-[300px] object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                />
               </div>
             </div>
           </div>
+        )}
+      </div>
+    );
+  };
+
+  const [expandedId, setExpandedId] = useState(0);
+
+  const handleToggle = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  return (
+    <section className="bg-white py-12">
+      <div className="mx-auto w-full max-w-[1440px] px-5 md:px-8 lg:px-10">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 mb-10">
+          <div>
+            <h1 className="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">Our Projects</h1>
+            <p className="text-gray-600 mb-6 text-base md:text-lg">
+              Discover our innovative projects that provided custom process engineering solutions,
+              covering everything from design to lifecycle analysis,
+              to enhance operational efficiency and offer valuable consultancy for your business needs
+            </p>
+          </div>
+          <div className="bg-gray-100 p-6 rounded-xl">
+            <h2 className="text-xl font-semibold mb-4 md:text-2xl">Key Highlights</h2>
+            <ul className="space-y-2 text-base md:text-lg">
+              <li className="flex items-center">
+                <span className="mr-2 text-green-500">✓</span>
+                <span>User-centric approach</span>
+              </li>
+              <li className="flex items-center">
+                <span className="mr-2 text-green-500">✓</span>
+                <span>Innovative solutions</span>
+              </li>
+              <li className="flex items-center">
+                <span className="mr-2 text-green-500">✓</span>
+                <span>Scalable technologies</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="space-y-4">
+          {PROJECTS_INFO.map((project) => (
+            <ProjectItem
+              key={project.id}
+              project={project}
+              isExpanded={expandedId === project.id}
+              onToggle={() => handleToggle(project.id)}
+            />
+          ))}
         </div>
       </div>
-      ))}
-      {/* <div 
-        className="absolute -bottom-2 left-0 w-full h-[12px] bg-repeat z-10"
-        style={{
-          backgroundImage: "url('/design-blue-bottom.png')",
-          backgroundSize: "auto",
-        }}
-      >            
-      </div> */}
-    
     </section>
   );
 };

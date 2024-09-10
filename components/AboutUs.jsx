@@ -3,7 +3,7 @@ import React from "react";
 const AboutUs = () => {
   return (
     <section className="flex flex-col text-center bg-white py-8 px-4 sm:px-8 md:px-24 lg:px-48 relative" id="about">
-      {/* <div 
+      {/* <div
         className="absolute -top-2 left-0 w-full h-[10px] bg-repeat"
         style={{
           backgroundImage: "url('/design-blue-top.png')",
@@ -29,11 +29,17 @@ const AboutUs = () => {
         <div className="flex justify-start mb-8">
           <div className="text-black text-left text-xl">
             {/* cspell:disable-next-line */}
-            Meeka Engineering Services is a licensed engineering firm; we understand that every client&apos;s process engineering needs are unique and require diverse, robust approaches. As such, we offer a breadth of services, ensuring that we address all your needs, from design to implementation and beyond. We aim to finish the job on time, under budget, and meet or exceed your expectations. 
+            Meeka Engineering Services is a licensed engineering firm;
+            we understand that every client&apos;s process engineering
+            needs are unique and require diverse, robust approaches.
+            As such, we offer a breadth of services, ensuring that we
+            address all your needs, from design to implementation and beyond.
+            We aim to finish the job on time, under budget, and meet or
+            exceed your expectations.
           </div>
         </div>
       </div>
-      {/* <div 
+      {/* <div
         className="absolute -bottom-2 left-0 w-full h-[11px] bg-repeat"
         style={{
           backgroundImage: "url('/design-blue-bottom.png')",
