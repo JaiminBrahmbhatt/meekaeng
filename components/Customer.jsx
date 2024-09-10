@@ -24,7 +24,6 @@ const Customer = () => {
         </div>
       </div>
       {/* <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
-        {/* Component */}
         <div className="flex flex-col items-center gap-8 sm:grid sm:grid-cols-3 sm:gap-12 md:grid-cols-5 md:gap-6">
           <div className="flex justify-center">
             <img
