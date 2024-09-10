@@ -9,9 +9,9 @@ const Services = () => {
       <div className="mx-auto w-full max-w-[1440px] px-5 md:px-8 lg:px-10">
         {/* Title and Description */}
         <div className="mb-10 text-center">
-          <h1 className="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">
+          <h3 className="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">
             Services
-          </h1>
+          </h3>
           <p className="text-gray-600 mb-6 text-base md:text-lg lg:text-xl">
             Our custom solutions are crafted to address your unique business needs
           </p>
