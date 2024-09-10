@@ -12,21 +12,9 @@ const AboutUs = () => {
       ></div> */}
       <div className="max-container relative z-20">
         <div className="flex items-center justify-center mb-8">
-          <svg width="18" height="18" viewBox="0 0 16 16" className="mr-0">
-            <path d="M8 1 Q7 0 6 1 L1 6 Q0 7 1 8 L6 13 Q7 14 8 13 L13 8 Q14 7 13 6 L8 1 Z" fill="#224194" />
-          </svg>
-          <svg width="18" height="18" viewBox="0 0 16 16" className="mr-0">
-            <path d="M8 1 Q7 0 6 1 L1 6 Q0 7 1 8 L6 13 Q7 14 8 13 L13 8 Q14 7 13 6 L8 1 Z" fill="#88c64b" />
-          </svg>
           <h1 className="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">
             About Us
           </h1>
-          <svg width="18" height="18" viewBox="0 0 16 16" className="ml-0">
-            <path d="M8 1 Q7 0 6 1 L1 6 Q0 7 1 8 L6 13 Q7 14 8 13 L13 8 Q14 7 13 6 L8 1 Z" fill="#88c64b" />
-          </svg>
-          <svg width="18" height="18" viewBox="0 0 16 16" className="ml-0">
-            <path d="M8 1 Q7 0 6 1 L1 6 Q0 7 1 8 L6 13 Q7 14 8 13 L13 8 Q14 7 13 6 L8 1 Z" fill="#224194" />
-          </svg>
         </div>
         <div className="flex justify-start mb-8">
           <div className="text-black text-left text-xl">
