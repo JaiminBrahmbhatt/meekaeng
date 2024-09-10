@@ -8,9 +8,9 @@ const CoreValues = () => {
       <div className="mx-auto w-full max-w-[1440px] px-5 md:px-8 lg:px-10">
         {/* Title and Description */}
         <div className="mb-10">
-          <h1 className="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">
+          <h3 className="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">
             Our Core Values
-          </h1>
+          </h3>
           <p className="text-gray-600 mb-6 text-base md:text-lg">
             Our core principles that guide every action we take.
           </p>
