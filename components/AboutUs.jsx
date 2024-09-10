@@ -12,9 +12,9 @@ const AboutUs = () => {
       ></div> */}
       <div className="max-container relative z-20">
         <div className="flex items-center justify-center mb-8">
-          <h1 className="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">
+          <h3 className="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">
             About Us
-          </h1>
+          </h3>
         </div>
         <div className="flex justify-start mb-8">
           <div className="text-black text-left text-xl">
