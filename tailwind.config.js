@@ -1,81 +1,66 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./*.html", "./assets/**/*.js"],
+  darkMode: "class",
   theme: {
     screens: {
-      xs: "320px",
-      // => @media (min-width: 320px) { ... }
+      sm: "540px",
+      // => @media (min-width: 576px) { ... }
 
-      sm: "475px",
-      // => @media (min-width: 475px) { ... }
-
-      md: "768px",
+      md: "720px",
       // => @media (min-width: 768px) { ... }
 
-      lg: "1024px",
-      // => @media (min-width: 1024px) { ... }
+      lg: "960px",
+      // => @media (min-width: 992px) { ... }
 
-      xl: "1280px",
-      // => @media (min-width: 1280px) { ... }
+      xl: "1140px",
+      // => @media (min-width: 1200px) { ... }
 
-      "2xl": "1536px",
-      // => @media (min-width: 1536px) { ... }
+      "2xl": "1320px",
+      // => @media (min-width: 1400px) { ... }
+    },
+    container: {
+      center: true,
+      padding: "16px",
     },
     extend: {
-      backgroundImage: {
-        loading: "url(/loading.svg)",
-        updates_man: "url(/updates_man.png)",
-        updates_laptop_calc: "url(/updates_laptop_calc.png)",
-        updates_laptop_notes: "url(//updates_laptop_notes.png)",
-      },
       colors: {
-        black: "var(--black)",
-        dark_grey: "var(--dark_grey)",
-        grey: "var(--grey)",
-        light_grey: "var(--light_grey)",
-        grey_blue: "var(--grey_blue)",
-        primary: "var(--primary)",
-        silver: "var(--silver)",
-        white: "var(--white)",
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
-        info: "var(--info)",
-        shade_1: "var(--shade_1)",
-        shade_2: "var(--shade_2)",
-        shade_3: "var(--shade_3)",
-        shade_4: "var(--shade_4)",
-        shade_5: "var(--shade_5)",
-        tint_1: "var(--tint_1)",
-        tint_2: "var(--tint_2)",
-        tint_3: "var(--tint_3)",
-        tint_4: "var(--tint_4)",
-        tint_5: "var(--tint_5)",
-        warning: "var(--warning)",
-        error: "var(--error)",
-        success: "var(--success)",
-        white_10: "var(--white_10)",
-        white_20: "var(--white_20)",
+        black: "#212b36",
+        "dark-700": "#090e34b3",
+        dark: {
+          DEFAULT: "#111928",
+          2: "#1F2A37",
+          3: "#374151",
+          4: "#4B5563",
+          5: "#6B7280",
+          6: "#9CA3AF",
+          7: "#D1D5DB",
+          8: "#E5E7EB",
+        },
+        primary: "#3758F9",
+        "blue-dark": "#1B44C8",
+        secondary: "#13C296",
+        "body-color": "#637381",
+        "body-secondary": "#8899A8",
+        warning: "#FBBF24",
+        stroke: "#DFE4EA",
+        "gray-1": "#F9FAFB",
+        "gray-2": "#F3F4F6",
+        "gray-7": "#CED4DA",
       },
-      fontSize: {
-        64: "64px",
-        36: "36px",
-        28: "28px",
-        20: "20px",
-      },
-      lineHeight: {
-        76: "76px",
-        44: "44px",
+      boxShadow: {
+        input: "0px 7px 20px rgba(0, 0, 0, 0.03)",
+        form: "0px 1px 55px -11px rgba(0, 0, 0, 0.01)",
+        pricing: "0px 0px 40px 0px rgba(0, 0, 0, 0.08)",
+        "switch-1": "0px 0px 5px rgba(0, 0, 0, 0.15)",
+        testimonial: "0px 10px 20px 0px rgba(92, 115, 160, 0.07)",
+        "testimonial-btn": "0px 8px 15px 0px rgba(72, 72, 138, 0.08)",
+        1: "0px 1px 3px 0px rgba(166, 175, 195, 0.40)",
+        2: "0px 5px 12px 0px rgba(0, 0, 0, 0.10)",
       },
     },
   },
-
-  plugins: [
-    function ({ addVariant }) {
-      addVariant("child-span", "& > span");
-    },
-  ],
-};
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
