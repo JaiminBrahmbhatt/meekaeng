@@ -24,69 +24,6 @@
   <script>
     new WOW().init();
   </script>
-  <style>
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 2rem;
-    }
-    @media (min-width: 640px) {
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (min-width: 968px) {
-      .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    .service-card {
-      background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    }
-    .image-container {
-      position: relative;
-      width: 100%;
-      height: 240px;
-      overflow: hidden;
-    }
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .service-card:hover .image-container img {
-      transform: scale(1.1);
-    }
-    .service-content {
-      padding: 1.5rem;
-    }
-    .service-title {
-      color: #1e293b;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-    .service-title a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.3s ease;
-    }
-    .service-title a:hover {
-      color: #3b82f6;
-    }
-  </style>
 </head>
 
 <body>
@@ -463,81 +400,111 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="services-grid">
-          <!-- Service 1 -->
-          <div class="service-card">
-            <div class="image-container">
-              <img src="./assets/images/blog/process-engineering.jpeg" alt="Process Engineering Services">
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">
-                <a href="process-engineering.html">Process Engineering Services</a>
-              </h3>
-            </div>
+      <div class="grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3">
+        <!-- 1 -->
+        <div class="group mb-10">
+          <div class="mb-8 overflow-hidden rounded-[5px] h-64">
+            <a href="process-engineering.html" class="block h-full">
+              <img src="./assets/images/blog/process-engineering.jpeg" alt="image"
+                class="w-full h-full object-cover transition group-hover:rotate-6 group-hover:scale-125" />
+            </a>
           </div>
-    
-          <!-- Service 2 -->
-          <div class="service-card">
-            <div class="image-container">
-              <img src="./assets/images/blog/project-management.jpeg" alt="Process Safety Management">
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">
-                <a href="process-safety-management.html">Process Safety Management</a>
-              </h3>
-            </div>
+          <div>
+            <h3>
+              <a href="process-engineering.html"
+                class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                Process Engineering Services
+              </a>
+            </h3>
           </div>
-    
-          <!-- Service 3 -->
-          <div class="service-card">
-            <div class="image-container">
-              <img src="./assets/images/blog/relief.jpeg" alt="Relief System Gap Analysis">
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">
-                <a href="relief-system-gap-analysis.html">Relief System Gap Analysis</a>
-              </h3>
-            </div>
+        </div>
+        <!-- 2 -->
+        <div class="group mb-10">
+          <div class="mb-8 overflow-hidden rounded-[5px] h-64">
+            <a href="process-safety-management.html" class="block h-full">
+              <img src="./assets/images/blog/project-management.jpeg" alt="image"
+                class="w-full h-full object-cover transition group-hover:rotate-6 group-hover:scale-125" />
+            </a>
           </div>
-    
-          <!-- Service 4 -->
-          <div class="service-card">
-            <div class="image-container">
-              <img src="./assets/images/blog/mechanical.jpeg" alt="Mechanical and Piping Engineering Services">
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">
-                <a href="mechanical-piping.html">Mechanical and Piping Engineering Services</a>
-              </h3>
-            </div>
+          <div>
+            <h3>
+              <a href="process-safety-management.html"
+                class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                Process Safety Management
+              </a>
+            </h3>
           </div>
-    
-          <!-- Service 5 -->
-          <div class="service-card">
-            <div class="image-container">
-              <img src="./assets/images/blog/img5.jpeg" alt="Civil and Structural Engineering Services">
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">
-                <a href="civil-structural.html">Civil and Structural Engineering Services</a>
-              </h3>
-            </div>
+        </div>
+        <!-- 3 -->
+        <div class="group mb-10">
+          <div class="mb-8 overflow-hidden rounded-[5px] h-64">
+            <a href="relief-system-gap-analysis.html" class="block h-full">
+              <img src="./assets/images/blog/relief.jpeg" alt="image"
+                class="w-full h-full object-cover transition group-hover:rotate-6 group-hover:scale-125" />
+            </a>
           </div>
-    
-          <!-- Service 6 -->
-          <div class="service-card">
-            <div class="image-container">
-              <img src="./assets/images/blog/pmc.jpeg" alt="Project Management Consultancy (PMC)">
-            </div>
-            <div class="service-content">
-              <h3 class="service-title">
-                <a href="project-management-consultancy.html">Project Management Consultancy (PMC)</a>
-              </h3>
-            </div>
+          <div>
+            <h3>
+              <a href="relief-system-gap-analysis.html"
+                class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                Relief System Gap Analysis
+              </a>
+            </h3>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="group mb-10">
+          <div class="mb-8 overflow-hidden rounded-[5px] h-64">
+            <a href="mechanical-piping.html" class="block h-full">
+              <img src="./assets/images/blog/mechanical.jpeg" alt="image"
+                class="w-full h-full object-cover transition group-hover:rotate-6 group-hover:scale-125" />
+            </a>
+          </div>
+          <div>
+            <h3>
+              <a href="mechanical-piping.html"
+                class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                Mechanical and Piping Engineering Services
+              </a>
+            </h3>
+          </div>
+        </div>
+        <!-- 5 -->
+        <div class="group mb-10">
+          <div class="mb-8 overflow-hidden rounded-[5px] h-64">
+            <a href="civil-structural.html" class="block h-full">
+              <img src="./assets/images/blog/img5.jpeg" alt="image"
+                class="w-full h-full object-cover transition group-hover:rotate-6 group-hover:scale-125" />
+            </a>
+          </div>
+          <div>
+            <h3>
+              <a href="civil-structural.html"
+                class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                Civil and Structural Engineering Services
+              </a>
+            </h3>
+          </div>
+        </div>
+        <!-- 6 -->
+        <div class="group mb-10">
+          <div class="mb-8 overflow-hidden rounded-[5px] h-64">
+            <a href="project-management-consultancy.html" class="block h-full">
+              <img src="./assets/images/blog/pmc.jpeg" alt="image"
+                class="w-full h-full object-cover transition group-hover:rotate-6 group-hover:scale-125" />
+            </a>
+          </div>
+          <div>
+            <h3>
+              <a href="project-management-consultancy.html"
+                class="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                Project Management Consultancy (PMC)
+              </a>
+            </h3>
           </div>
         </div>
       </div>
+      
     </div>
   </section>
   <!-- ====== Blog Details Section End -->
