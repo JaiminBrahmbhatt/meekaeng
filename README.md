@@ -1,41 +1,69 @@
-## Deployment Cycle Steps
+# Meeka Engineering Website
 
-- Always work on the `dev` branch for changes.
-- Create a new branch from `dev`, make changes, and create a pull request (PR) to merge into `dev`.
-- Commit approved changes to `dev` cycle, which deploys to Vercel preview environment for testing.
-- If changes look good in preview, create PR to merge into `main` branch for production deployment.
+This is the official website codebase for Meeka Engineering. It is a multi-page static website built using HTML5 and Tailwind CSS.
+
+## Project Structure
+
+The project consists of individual HTML files for each page located in the root directory:
+- `index.html` - Home page
+- `about.html` - About Us
+- `service.html` - Overview of services
+- `civil-structural.html`, `mechanical-piping.html`, etc. - Specific service pages
+
+## Tech Stack
+
+- **HTML5**: Semantic markup for page structure.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **JavaScript**: Used for interactive elements (navigation, etc.).
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone [https://github.com/JaiminBrahmbhatt/meekaeng.git](https://github.com/JaiminBrahmbhatt/meekaeng.git)
+
+```
+
+2. Navigate to the project folder:
+```bash
+cd meekaeng
+
+```
+
+
+3. Install dependencies:
+```bash
+npm install
+
+```
+
+
+
+### Development
+
+To start the Tailwind CSS build process (watching for changes):
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*(Note: Check package.json for the exact script name if 'dev' does not work)*
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This is a static site. To deploy:
 
-## Learn More
+1. **Vercel/Netlify:** Connect this repository. The build command usually `npm run build` (if configured) or leave empty for simple static hosting.
+2. **GitHub Pages:** Go to Settings -> Pages and select the `main` branch as the source.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Always work on the `dev` branch for changes.
+2. Create a new branch from `dev`, make changes, and create a Pull Request (PR).
+3. Once approved, merge into `dev`.
