@@ -4,45 +4,70 @@
   // ======= Sticky
   window.onscroll = function () {
     const ud_header = document.querySelector(".ud-header");
-    const sticky = ud_header.offsetTop;
-    const logo = document.querySelectorAll(".header-logo");
+    if (ud_header) {
+      const sticky = ud_header.offsetTop;
+      const logo = document.querySelectorAll(".header-logo");
 
-    if (window.pageYOffset > sticky) {
-      ud_header.classList.add("sticky");
-    } else {
-      ud_header.classList.remove("sticky");
-    }
-
-    if(logo.length) {
-      // === logo change
-      if (ud_header.classList.contains("sticky")) {
-        document.querySelector(".header-logo").src =
-          "assets/images/logo/croped.svg"
+      if (window.pageYOffset > sticky) {
+        ud_header.classList.add("sticky");
       } else {
-        document.querySelector(".header-logo").src =
-          "assets/images/logo/croped.svg"
+        ud_header.classList.remove("sticky");
       }
-    }
 
-    if (document.documentElement.classList.contains("dark")) {
-      if(logo.length) {
+      if (logo.length) {
         // === logo change
         if (ud_header.classList.contains("sticky")) {
           document.querySelector(".header-logo").src =
             "assets/images/logo/croped.svg"
-        } 
+        } else {
+          document.querySelector(".header-logo").src =
+            "assets/images/logo/croped.svg"
+        }
       }
     }
 
-    // show or hide the back-top-top button
+    // show or hide the back-to-top button
     const backToTop = document.querySelector(".back-to-top");
-    if (
-      document.body.scrollTop > 50 ||
-      document.documentElement.scrollTop > 50
-    ) {
-      backToTop.style.display = "flex";
-    } else {
-      backToTop.style.display = "none";
+    if (backToTop) {
+      if (
+        document.body.scrollTop > 50 ||
+        document.documentElement.scrollTop > 50
+      ) {
+        backToTop.style.display = "flex";
+      } else {
+        backToTop.style.display = "none";
+      }
+    }
+
+    // Highlight active link
+    const sections = document.querySelectorAll(".ud-menu-scroll");
+    const scrollPos =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop;
+
+    for (let i = 0; i < sections.length; i++) {
+      const currLink = sections[i];
+      const val = currLink.getAttribute("href");
+
+      if (val && val.startsWith("#")) {
+        const refElement = document.querySelector(val);
+        if (refElement) {
+          const scrollTopMinus = scrollPos + 73;
+          if (
+            refElement.offsetTop <= scrollTopMinus &&
+            refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+          ) {
+            const activeLink = document.querySelector(".ud-menu-scroll.active");
+            if (activeLink) {
+              activeLink.classList.remove("active");
+            }
+            currLink.classList.add("active");
+          } else {
+            currLink.classList.remove("active");
+          }
+        }
+      }
     }
   };
 
@@ -50,18 +75,22 @@
   let navbarToggler = document.querySelector("#navbarToggler");
   const navbarCollapse = document.querySelector("#navbarCollapse");
 
-  navbarToggler.addEventListener("click", () => {
-    navbarToggler.classList.toggle("navbarTogglerActive");
-    navbarCollapse.classList.toggle("hidden");
-  });
+  if (navbarToggler && navbarCollapse) {
+    navbarToggler.addEventListener("click", () => {
+      navbarToggler.classList.toggle("navbarTogglerActive");
+      navbarCollapse.classList.toggle("hidden");
+    });
+  }
 
   //===== close navbar-collapse when a  clicked
   document
     .querySelectorAll("#navbarCollapse ul li:not(.submenu-item) a")
     .forEach((e) =>
       e.addEventListener("click", () => {
-        navbarToggler.classList.remove("navbarTogglerActive");
-        navbarCollapse.classList.add("hidden");
+        if (navbarToggler && navbarCollapse) {
+          navbarToggler.classList.remove("navbarTogglerActive");
+          navbarCollapse.classList.add("hidden");
+        }
       })
     );
 
@@ -83,7 +112,9 @@
   });
 
   // ===== wow js
-  new WOW().init();
+  if (typeof WOW !== 'undefined') {
+    new WOW().init();
+  }
 
   // ====== scroll top js
   function scrollTo(element, to = 0, duration = 500) {
@@ -114,45 +145,95 @@
     return (-c / 2) * (t * (t - 2) - 1) + b;
   };
 
-  document.querySelector(".back-to-top").onclick = () => {
-    scrollTo(document.documentElement);
-  };
+  const backToTop = document.querySelector(".back-to-top");
+  if (backToTop) {
+    backToTop.onclick = () => {
+      scrollTo(document.documentElement);
+    };
+  }
 
-    /* ========  themeSwitcher start ========= */
+  // ==== for menu scroll click
+  const pageLink = document.querySelectorAll(".ud-menu-scroll");
+
+  pageLink.forEach((elem) => {
+    elem.addEventListener("click", (e) => {
+      const href = elem.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        const refElement = document.querySelector(href);
+        if (refElement) {
+          window.scrollTo({
+            top: refElement.offsetTop - 73,
+            behavior: "smooth",
+          });
+        }
+      }
+    });
+  });
+
+  /* ========  themeSwitcher start ========= */
 
   // themeSwitcher
   const themeSwitcher = document.getElementById('themeSwitcher');
 
-  // Theme Vars
-  const userTheme = localStorage.getItem('theme');
-  const systemTheme = window.matchMedia('(prefers-color0scheme: dark)').matches;
+  if (themeSwitcher) {
+    // Theme Vars
+    const userTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  // Initial Theme Check
-  const themeCheck = () => {
-    if (userTheme === 'dark' || (!userTheme && systemTheme)) {
+    // Initial Theme Check
+    const themeCheck = () => {
+      if (userTheme === 'dark' || (!userTheme && systemTheme)) {
+        document.documentElement.classList.add('dark');
+        return;
+      }
+    };
+
+    // Manual Theme Switch
+    const themeSwitch = () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        return;
+      }
+
       document.documentElement.classList.add('dark');
-      return;
-    }
-  };
+      localStorage.setItem('theme', 'dark');
+    };
 
-  // Manual Theme Switch
-  const themeSwitch = () => {
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-      return;
-    }
+    // call theme switch on clicking buttons
+    themeSwitcher.addEventListener('click', () => {
+      themeSwitch();
+    });
 
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-  };
-
-  // call theme switch on clicking buttons
-  themeSwitcher.addEventListener('click', () => {
-    themeSwitch();
-  });
-
-  // invoke theme check on initial load
-  themeCheck();
+    // invoke theme check on initial load
+    themeCheck();
+  }
   /* ========  themeSwitcher End ========= */
+
+  // ===== Contact Form
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const fullName = document.getElementById("fullName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!fullName || !email || !phone || !message) {
+        alert("Please fill out all required fields.");
+        return;
+      }
+
+      const subject = encodeURIComponent(`New Message from ${fullName}`);
+      const body = encodeURIComponent(
+        `Full Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`
+      );
+      const mailtoLink = `mailto:Info@MeekaEng.com?subject=${subject}&body=${body}`;
+
+      window.location.href = mailtoLink;
+    });
+  }
 })();

@@ -12,14 +12,12 @@
 
   <!-- ==== WOW JS ==== -->
   <script src="assets/js/wow.min.js"></script>
-  <script>
-    new WOW().init();
-  </script>
+
 </head>
 
 <body>
   <!-- ====== Navbar Section Start -->
-  <div class="absolute top-0 left-0 z-40 flex items-center w-full bg-transparent ud-header">
+  <div class="ud-header">
     <div class="container">
       <div class="relative flex items-center justify-between -mx-4">
         <div class="max-w-full px-4 w-60">
@@ -163,16 +161,14 @@
     </div>
   </div>
   <!-- ====== Navbar Section End -->
-   <!-- ====== Banner Section Start -->
-  <div class="relative z-10 overflow-hidden pb-[60px] pt-[120px] dark:bg-dark md:pt-[130px] lg:pt-[160px]">
-    <div
-      class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-stroke/0 via-stroke to-stroke/0 dark:via-dark-3">
-    </div>
+  <!-- ====== Banner Section Start -->
+  <div class="ud-page-banner">
+    <div class="ud-page-banner-border"></div>
     <div class="container">
       <div class="flex flex-wrap items-center -mx-4">
         <div class="w-full px-4">
           <div class="text-center">
-            <h1 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+            <h1 class="ud-page-banner-title">
               Projects
             </h1>
             <ul class="flex items-center justify-center gap-[10px]">
@@ -183,8 +179,7 @@
                 </a>
               </li>
               <li>
-                <a href="#"
-                  class="flex items-center gap-[10px] text-base font-medium text-body-color dark:text-dark-6">
+                <a href="#" class="flex items-center gap-[10px] text-base font-medium text-body-color dark:text-dark-6">
                   <span class="text-body-color dark:text-dark-6"> / </span>
                   Projects
                 </a>
@@ -436,8 +431,8 @@
   </section>
   <!-- ====== Pricing Section End -->
 
-   <!-- ====== Contact Start ====== -->
-   <section id="contact" class="relative py-20 md:py-[120px]">
+  <!-- ====== Contact Start ====== -->
+  <section id="contact" class="relative py-20 md:py-[120px]">
     <div class="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
     <div class="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2"></div>
     <div class="container px-4">
@@ -565,7 +560,7 @@
   <footer class="wow fadeInUp relative z-10 bg-[#090E34] pt-20 lg:pt-[100px]" data-wow-delay=".15s">
     <div class="container">
       <div class="-mx-4 flex flex-wrap">
-        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
+        <div class="ud-footer-column-pages">
           <div class="mb-10 w-full">
             <h4 class="mb-9 text-lg font-semibold text-white">Pages</h4>
             <ul>
@@ -592,7 +587,7 @@
             </ul>
           </div>
         </div>
-        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+        <div class="ud-footer-column-services">
           <div class="mb-10 w-full">
             <h4 class="mb-9 text-lg font-semibold text-white">Services</h4>
             <ul>
@@ -602,7 +597,7 @@
                 </a>
               </li>
               <li>
-                <a href=""/process-safety-management.html""
+                <a href="/process-safety-management.html"
                   class="mb-3 inline-block text-base text-gray-7 hover:text-primary">
                   Process Safety Management
                 </a>
@@ -616,7 +611,7 @@
             </ul>
           </div>
         </div>
-        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+        <div class="ud-footer-column-services">
           <div class="mb-10 w-full">
             <h4 class="mb-9 text-lg font-semibold text-white">Services</h4>
             <ul>
@@ -628,7 +623,6 @@
               <li>
                 <a href="/civil-structural.html" class="mb-3 inline-block text-base text-gray-7 hover:text-primary">
                   Civil and Structural Engineering Services
-
                 </a>
               </li>
               <li>
