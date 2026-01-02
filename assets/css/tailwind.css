@@ -2013,6 +2013,18 @@ body {
   padding-bottom: 0.5rem;
 }
 
+@media (max-width: 1023px) {
+  #navbarToggler span {
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 25 40 / var(--tw-bg-opacity));
+  }
+
+  :is(.dark #navbarToggler span) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+}
+
 .sticky #navbarToggler span {
   --tw-bg-opacity: 1;
   background-color: rgb(17 25 40 / var(--tw-bg-opacity));
