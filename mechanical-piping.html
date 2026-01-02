@@ -12,9 +12,7 @@
 
   <!-- ==== WOW JS ==== -->
   <script src="assets/js/wow.min.js"></script>
-  <script>
-    new WOW().init();
-  </script>
+
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -25,7 +23,7 @@
 
 <body>
   <!-- ====== Navbar Section Start -->
-  <div class="absolute top-0 left-0 z-40 flex items-center w-full bg-transparent ud-header">
+  <div class="ud-header">
     <div class="container">
       <div class="relative flex items-center justify-between -mx-4">
         <div class="max-w-full px-4 w-60">
@@ -169,16 +167,13 @@
     </div>
   </div>
   <!-- ====== Navbar Section End -->
-  <!-- ====== Banner Section Start -->
-  <!-- <div class="relative z-10 overflow-hidden pb-[60px] pt-[120px] dark:bg-dark md:pt-[130px] lg:pt-[160px]">
-    <div
-      class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-stroke/0 via-stroke to-stroke/0 dark:via-dark-3">
-    </div>
+  <div class="ud-page-banner">
+    <div class="ud-page-banner-border"></div>
     <div class="container">
       <div class="flex flex-wrap items-center -mx-4">
         <div class="w-full px-4">
           <div class="text-center">
-            <h1 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+            <h1 class="ud-page-banner-title">
               Mechanical and Piping Engineering
             </h1>
             <ul class="flex items-center justify-center gap-[10px]">
@@ -190,14 +185,13 @@
               </li>
               <li>
                 <a href="./service.html"
-                  class="flex items-center gap-[10px] text-base font-medium text-body-color dark:text-dark-6">
+                  class="flex items-center gap-[10px] text-base font-medium text-dark dark:text-white">
                   <span class="text-body-color dark:text-dark-6"> / </span>
                   Services
                 </a>
               </li>
               <li>
-                <a href="./mechanical-piping.html"
-                  class="flex items-center gap-[10px] text-base font-medium text-body-color dark:text-dark-6">
+                <a href="#" class="flex items-center gap-[10px] text-base font-medium text-body-color dark:text-dark-6">
                   <span class="text-body-color dark:text-dark-6"> / </span>
                   Mechanical and Piping Engineering
                 </a>
@@ -207,8 +201,7 @@
         </div>
       </div>
     </div>
-  </div> -->
-  <!-- ====== Banner Section End -->
+  </div>
 
 
   <!-- ====== Blog Details Section Start -->
@@ -217,37 +210,7 @@
       <div class="-mx-4 flex flex-wrap">
         <div class="w-full px-4">
           <div class="mx-auto mb-[60px] max-w-[720px] text-center">
-            <span class="mb-2 block text-lg font-semibold text-primary">
-              <div class="container">
-                <div class="flex flex-wrap items-center -mx-4">
-                  <div class="w-full px-4">
-                    <div class="text-center">
-                      <ul class="flex items-center justify-center gap-[10px]">
-                        <li>
-                          <a href="index.html" class="flex items-center gap-[10px] text-base font-medium text-primary">
-                            Home
-                          </a>
-                        </li>
-                        <li>
-                          <a href="./service.html"
-                            class="flex items-center gap-[10px] text-base font-medium text-primary">
-                            <span class="text-primary"> / </span>
-                            Services
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#"
-                            class="flex items-center gap-[10px] text-base font-medium text-primary">
-                            <span class="text-primary"> / </span>
-                            Mechanical and Piping Engineering
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </span>
+
             <h2 class="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">
               Mechanical and Piping Engineering Services
             </h2>
@@ -256,226 +219,235 @@
               installation, and optimization of mechanical systems and piping networks in refining, petrochemical, and
               LNG facilities. With a focus on safety, reliability, and efficiency, we provide expert engineering support
               at every stage of your project. </p>
-              <div class="relative mt-16 mb-10 w-1/4 mx-auto">
-                <!-- Decorative elements - scaled down -->
-                <div class="absolute -top-3 -left-3 h-12 w-12 rounded-tl-xl border-t-2 border-l-2 border-primary"></div>
-                <div class="absolute -bottom-3 -right-3 h-12 w-12 rounded-br-xl border-b-2 border-r-2 border-primary"></div>
-                
-                <!-- Shadow and main container -->
-                <div class="relative overflow-hidden rounded-lg shadow-lg">
-                  <!-- Gradient overlay -->
-                  <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent pointer-events-none"></div>
-                  
-                  <!-- Image container with subtle border -->
-                  <div class="p-0.5 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800">
-                    <!-- Placeholder image - replace with your actual image -->
-                    <img 
-                      src="assets/images/blog/mechanical.jpeg" 
-                      alt="Process Engineering Services" 
-                      class="w-full h-auto object-cover rounded-md"
-                    />
-                  </div>
-                </div>
-                
-                <!-- Smaller floating accent elements -->
-                <div class="absolute -top-2 right-1/4 h-4 w-4 rounded-full bg-primary/20 backdrop-blur-sm"></div>
-                <div class="absolute top-1/3 -right-2 h-6 w-6 rounded-full bg-primary/30 backdrop-blur-sm"></div>
+            <div class="relative mt-16 mb-10 w-1/4 mx-auto">
+              <!-- Decorative elements - scaled down -->
+              <div class="absolute -top-3 -left-3 h-12 w-12 rounded-tl-xl border-t-2 border-l-2 border-primary"></div>
+              <div class="absolute -bottom-3 -right-3 h-12 w-12 rounded-br-xl border-b-2 border-r-2 border-primary">
               </div>
+
+              <!-- Shadow and main container -->
+              <div class="relative overflow-hidden rounded-lg shadow-lg">
+                <!-- Gradient overlay -->
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent pointer-events-none"></div>
+
+                <!-- Image container with subtle border -->
+                <div class="p-0.5 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800">
+                  <!-- Placeholder image - replace with your actual image -->
+                  <img src="assets/images/blog/mechanical.jpeg" alt="Process Engineering Services"
+                    class="w-full h-auto object-cover rounded-md" />
+                </div>
+              </div>
+
+              <!-- Smaller floating accent elements -->
+              <div class="absolute -top-2 right-1/4 h-4 w-4 rounded-full bg-primary/20 backdrop-blur-sm"></div>
+              <div class="absolute top-1/3 -right-2 h-6 w-6 rounded-full bg-primary/30 backdrop-blur-sm"></div>
+            </div>
           </div>
         </div>
       </div>
       <div class="-mx-4 flex flex-wrap">
         <div class="w-full px-4 lg:w-1/2">
-            <div class="mb-12 flex lg:mb-[70px]">
-                <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                    <i data-lucide="settings" class="text-white"></i>
-                </div>
-                <div class="w-full">
-                    <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                        Mechanical Equipment Design & Specification
-                    </h3>
-                    <p class="text-base text-body-color dark:text-dark-6">
-                        Expertise in the design and specification of key mechanical equipment, including pumps, compressors,
-                        heat exchangers, pressure vessels, reactors, and storage tanks. We ensure equipment is designed for
-                        optimal performance, safety, and compliance with industry standards such as ASME, API, and local
-                        regulations.
-                    </p>
-                </div>
+          <div class="mb-12 flex lg:mb-[70px]">
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="settings" class="text-white"></i>
             </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Mechanical Equipment Design & Specification
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                Expertise in the design and specification of key mechanical equipment, including pumps, compressors,
+                heat exchangers, pressure vessels, reactors, and storage tanks. We ensure equipment is designed for
+                optimal performance, safety, and compliance with industry standards such as ASME, API, and local
+                regulations.
+              </p>
+            </div>
+          </div>
         </div>
         <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 flex lg:mb-[70px]">
-              <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                  <i data-lucide="layout-dashboard" class="text-white"></i>
-              </div>
-              <div class="w-full">
-                  <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                      Piping Design & Layout
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                      Development of efficient and reliable piping layouts based on process requirements, space constraints,
-                      and flow optimization. Our designs focus on minimizing pressure drops, reducing stress, and optimizing
-                      material selection to ensure system integrity and longevity.
-                  </p>
-              </div>
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="layout-dashboard" class="text-white"></i>
+            </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Piping Design & Layout
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                Development of efficient and reliable piping layouts based on process requirements, space constraints,
+                and flow optimization. Our designs focus on minimizing pressure drops, reducing stress, and optimizing
+                material selection to ensure system integrity and longevity.
+              </p>
+            </div>
           </div>
-      </div>
-      <div class="w-full px-4 lg:w-1/2">
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 flex lg:mb-[70px]">
-              <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                  <i data-lucide="activity" class="text-white"></i>
-              </div>
-              <div class="w-full">
-                  <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                      Piping Stress Analysis & Flexibility Design
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                      Advanced piping stress analysis to assess the effects of thermal expansion, pressure, and mechanical
-                      loads on piping systems. Our analysis ensures that piping is designed for safe operation under all
-                      conditions, including startup, shutdown, and emergencies, preventing failures and extending system life.
-                  </p>
-              </div>
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="activity" class="text-white"></i>
+            </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Piping Stress Analysis & Flexibility Design
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                Advanced piping stress analysis to assess the effects of thermal expansion, pressure, and mechanical
+                loads on piping systems. Our analysis ensures that piping is designed for safe operation under all
+                conditions, including startup, shutdown, and emergencies, preventing failures and extending system life.
+              </p>
+            </div>
           </div>
-      </div>
-      <div class="w-full px-4 lg:w-1/2">
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 flex lg:mb-[70px]">
-              <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                  <i data-lucide="flask-round" class="text-white"></i>
-              </div>
-              <div class="w-full">
-                  <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                      Material Selection & Corrosion Analysis
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                      Comprehensive material selection services to ensure optimal performance in harsh environments, including
-                      high temperatures, high pressures, and corrosive conditions. Our corrosion analysis helps prevent
-                      degradation, ensuring the longevity and integrity of your assets.
-                  </p>
-              </div>
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="flask-round" class="text-white"></i>
+            </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Material Selection & Corrosion Analysis
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                Comprehensive material selection services to ensure optimal performance in harsh environments, including
+                high temperatures, high pressures, and corrosive conditions. Our corrosion analysis helps prevent
+                degradation, ensuring the longevity and integrity of your assets.
+              </p>
+            </div>
           </div>
-      </div>
-      <div class="w-full px-4 lg:w-1/2">
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 flex lg:mb-[70px]">
-              <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                  <i data-lucide="box" class="text-white"></i>
-              </div>
-              <div class="w-full">
-                  <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                      Piping Isometric & 3D Modeling
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                      We create detailed isometric drawings and 3D models to visualize complex piping systems, ensuring that
-                      all components are accounted for and allowing for seamless integration during construction. These models
-                      facilitate clash detection, fabrication accuracy, and smooth installation.
-                  </p>
-              </div>
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="box" class="text-white"></i>
+            </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Piping Isometric & 3D Modeling
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                We create detailed isometric drawings and 3D models to visualize complex piping systems, ensuring that
+                all components are accounted for and allowing for seamless integration during construction. These models
+                facilitate clash detection, fabrication accuracy, and smooth installation.
+              </p>
+            </div>
           </div>
-      </div>
-      <div class="w-full px-4 lg:w-1/2">
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 flex lg:mb-[70px]">
-              <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                  <i data-lucide="cog" class="text-white"></i>
-              </div>
-              <div class="w-full">
-                  <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                      Equipment Sizing and Procurement Support
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                      Sizing of mechanical equipment such as pumps, compressors, and heat exchangers to meet process
-                      requirements. Our team also provides technical support during the procurement phase, ensuring equipment
-                      matches the project's specifications and performance criteria.
-                  </p>
-              </div>
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="cog" class="text-white"></i>
+            </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Equipment Sizing and Procurement Support
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                Sizing of mechanical equipment such as pumps, compressors, and heat exchangers to meet process
+                requirements. Our team also provides technical support during the procurement phase, ensuring equipment
+                matches the project's specifications and performance criteria.
+              </p>
+            </div>
           </div>
-      </div>
-      <div class="w-full px-4 lg:w-1/2">
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 flex lg:mb-[70px]">
-              <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                  <i data-lucide="clipboard-check" class="text-white"></i>
-              </div>
-              <div class="w-full">
-                  <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                      Piping Specifications & Standards Compliance
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                      Developing detailed piping specifications that adhere to industry standards (e.g., ASME B31.3) and
-                      project-specific requirements, ensuring compliance with regulatory and safety guidelines. We provide
-                      ongoing support to guarantee that piping systems meet operational demands and code compliance.
-                  </p>
-              </div>
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="clipboard-check" class="text-white"></i>
+            </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Piping Specifications & Standards Compliance
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                Developing detailed piping specifications that adhere to industry standards (e.g., ASME B31.3) and
+                project-specific requirements, ensuring compliance with regulatory and safety guidelines. We provide
+                ongoing support to guarantee that piping systems meet operational demands and code compliance.
+              </p>
+            </div>
           </div>
-      </div>
-      <div class="w-full px-4 lg:w-1/2">
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 flex lg:mb-[70px]">
-              <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                  <i data-lucide="git-fork" class="text-white"></i>
-              </div>
-              <div class="w-full">
-                  <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                      Support Design & Pipe Routing Optimization
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                      Designing appropriate pipe supports to manage thermal expansion, mechanical loads, and vibration, while
-                      optimizing pipe routing for space efficiency and minimal interference with other systems. Our team
-                      ensures that the entire piping system is secure and easy to maintain.
-                  </p>
-              </div>
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="git-fork" class="text-white"></i>
+            </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Support Design & Pipe Routing Optimization
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                Designing appropriate pipe supports to manage thermal expansion, mechanical loads, and vibration, while
+                optimizing pipe routing for space efficiency and minimal interference with other systems. Our team
+                ensures that the entire piping system is secure and easy to maintain.
+              </p>
+            </div>
           </div>
-      </div>
-      <div class="w-full px-4 lg:w-1/2">
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 flex lg:mb-[70px]">
-              <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                  <i data-lucide="badge-plus" class="text-white"></i>
-              </div>
-              <div class="w-full">
-                  <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                      Heat Exchanger and Pressure Vessel Design
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                      Design and specification of heat exchangers and pressure vessels tailored to your process requirements,
-                      ensuring optimal heat transfer, pressure containment, and compliance with industry standards like ASME
-                      Section VIII.
-                  </p>
-              </div>
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="badge-plus" class="text-white"></i>
+            </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Heat Exchanger and Pressure Vessel Design
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                Design and specification of heat exchangers and pressure vessels tailored to your process requirements,
+                ensuring optimal heat transfer, pressure containment, and compliance with industry standards like ASME
+                Section VIII.
+              </p>
+            </div>
           </div>
-      </div>
-      <div class="w-full px-4 lg:w-1/2">
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 flex lg:mb-[70px]">
-              <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                  <i data-lucide="scan-line" class="text-white"></i>
-              </div>
-              <div class="w-full">
-                  <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                      Site Survey & As-Built Documentation
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                      Conducting thorough site surveys and generating accurate as-built documentation to capture existing
-                      conditions and integrate new systems seamlessly. Our services include laser scanning and 3D modeling to
-                      provide precise data for brownfield projects and retrofits.
-                  </p>
-              </div>
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="scan-line" class="text-white"></i>
+            </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Site Survey & As-Built Documentation
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                Conducting thorough site surveys and generating accurate as-built documentation to capture existing
+                conditions and integrate new systems seamlessly. Our services include laser scanning and 3D modeling to
+                provide precise data for brownfield projects and retrofits.
+              </p>
+            </div>
           </div>
-      </div>
-      <div class="w-full px-4 lg:w-1/2">
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 flex lg:mb-[70px]">
-              <div class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
-                  <i data-lucide="wrench" class="text-white"></i>
-              </div>
-              <div class="w-full">
-                  <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                      Construction Support & Field Engineering
-                  </h3>
-                  <p class="text-base text-body-color dark:text-dark-6">
-                      Ongoing support during the construction phase, including field engineering services to address
-                      challenges, coordinate with contractors, and ensure the mechanical and piping systems are installed
-                      correctly and function as intended. Our hands-on approach ensures project timelines are met while
-                      maintaining quality and safety.
-                  </p>
-              </div>
+            <div
+              class="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center rounded-xl bg-primary text-white sm:mr-6 sm:h-[60px] sm:max-w-[60px]">
+              <i data-lucide="wrench" class="text-white"></i>
+            </div>
+            <div class="w-full">
+              <h3 class="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                Construction Support & Field Engineering
+              </h3>
+              <p class="text-base text-body-color dark:text-dark-6">
+                Ongoing support during the construction phase, including field engineering services to address
+                challenges, coordinate with contractors, and ensure the mechanical and piping systems are installed
+                correctly and function as intended. Our hands-on approach ensures project timelines are met while
+                maintaining quality and safety.
+              </p>
+            </div>
           </div>
+        </div>
       </div>
-    </div>
-    
+
     </div>
     <div>
       <span class="absolute left-4 top-4 -z-[1]">
@@ -570,8 +542,8 @@
   </section>
   <!-- ====== Blog Details Section End -->
 
-   <!-- ====== Contact Start ====== -->
-   <section id="contact" class="relative py-20 md:py-[120px]">
+  <!-- ====== Contact Start ====== -->
+  <section id="contact" class="relative py-20 md:py-[120px]">
     <div class="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
     <div class="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2"></div>
     <div class="container px-4">
@@ -662,33 +634,7 @@
             </form>
           </div>
 
-          <script>
-            document.getElementById("contact-form").addEventListener("submit", function (event) {
-              event.preventDefault(); // Prevent default form submission
-              console.log("abc");
-              // Collect form data
-              const fullName = document.getElementById("fullName").value.trim();
-              const email = document.getElementById("email").value.trim();
-              const phone = document.getElementById("phone").value.trim();
-              const message = document.getElementById("message").value.trim();
 
-              // Validate required fields
-              if (!fullName || !email || !phone || !message) {
-                alert("Please fill out all required fields.");
-                return;
-              }
-
-              // Create a mailto link
-              const subject = encodeURIComponent(`New Message from ${fullName}`);
-              const body = encodeURIComponent(
-                `Full Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`
-              );
-              const mailtoLink = `mailto:Info@MeekaEng.com?subject=${subject}&body=${body}`;
-
-              // Open the mail client
-              window.location.href = mailtoLink;
-            });
-          </script>
         </div>
       </div>
     </div>
@@ -744,7 +690,7 @@
             </div>
           </div>
         </div> -->
-        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
+        <div class="ud-footer-column-pages">
           <div class="mb-10 w-full">
             <h4 class="mb-9 text-lg font-semibold text-white">Pages</h4>
             <ul>
@@ -771,7 +717,7 @@
             </ul>
           </div>
         </div>
-        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+        <div class="ud-footer-column-services">
           <div class="mb-10 w-full">
             <h4 class="mb-9 text-lg font-semibold text-white">Services</h4>
             <ul>
@@ -781,7 +727,7 @@
                 </a>
               </li>
               <li>
-                <a href=""/process-safety-management.html""
+                <a href="/process-safety-management.html"
                   class="mb-3 inline-block text-base text-gray-7 hover:text-primary">
                   Process Safety Management
                 </a>
@@ -812,7 +758,7 @@
             </ul>
           </div>
         </div>
-        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+        <div class="ud-footer-column-services">
           <div class="mb-10 w-full">
             <h4 class="mb-9 text-lg font-semibold text-white">Services</h4>
             <ul>
@@ -841,7 +787,6 @@
               <li>
                 <a href="/civil-structural.html" class="mb-3 inline-block text-base text-gray-7 hover:text-primary">
                   Civil and Structural Engineering Services
-
                 </a>
               </li>
               <li>

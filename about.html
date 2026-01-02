@@ -10,22 +10,20 @@
   <link rel="stylesheet" href="assets/css/animate.css" />
   <link rel="stylesheet" href="assets/css/tailwind.css" />
 
-   <!-- ==== WOW JS ==== -->
-   <script src="assets/js/wow.min.js"></script>
-   <script src="https://unpkg.com/lucide@latest"></script>
-   <script>
-     document.addEventListener("DOMContentLoaded", function () {
-       lucide.createIcons();
-     });
-   </script>
-   <script>
-     new WOW().init();
-   </script>
+  <!-- ==== WOW JS ==== -->
+  <script src="assets/js/wow.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons();
+    });
+  </script>
+
 </head>
 
 <body>
   <!-- ====== Navbar Section Start -->
-  <div class="absolute top-0 left-0 z-40 flex items-center w-full bg-transparent ud-header">
+  <div class="ud-header">
     <div class="container">
       <div class="relative flex items-center justify-between -mx-4">
         <div class="max-w-full px-4 w-60">
@@ -170,15 +168,13 @@
   </div>
   <!-- ====== Navbar Section End -->
   <!-- ====== Banner Section Start -->
-  <div class="relative z-10 overflow-hidden pb-[60px] pt-[120px] dark:bg-dark md:pt-[130px] lg:pt-[160px]">
-    <div
-      class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-stroke/0 via-stroke to-stroke/0 dark:via-dark-3">
-    </div>
+  <div class="ud-page-banner">
+    <div class="ud-page-banner-border"></div>
     <div class="container">
       <div class="flex flex-wrap items-center -mx-4">
         <div class="w-full px-4">
           <div class="text-center">
-            <h1 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+            <h1 class="ud-page-banner-title">
               About Us
             </h1>
             <ul class="flex items-center justify-center gap-[10px]">
@@ -189,8 +185,7 @@
                 </a>
               </li>
               <li>
-                <a href="#"
-                  class="flex items-center gap-[10px] text-base font-medium text-body-color dark:text-dark-6">
+                <a href="#" class="flex items-center gap-[10px] text-base font-medium text-body-color dark:text-dark-6">
                   <span class="text-body-color dark:text-dark-6"> / </span>
                   About us
                 </a>
@@ -586,106 +581,106 @@
   </section>
   <!-- ====== About Section End -->
 
-    <!-- ====== Features Section Start -->
-    <section class="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
-      <div class="container">
-        <div class="-mx-4 flex flex-wrap">
-          <div class="w-full px-4">
-            <div class="mx-auto mb-12 max-w-[485px] text-center lg:mb-[70px]">
-              <span class="mb-2 block text-lg font-semibold text-primary">
-                Features
-              </span>
-              <h2 class="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
-                Core Values
-              </h2>
-              <p class="text-base text-body-color dark:text-dark-6">
-                We prioritize safety, integrity, innovation, collaboration, and customer focus—ensuring a safe
-                environment, ethical practices, creative solutions, teamwork, and exceptional service to meet evolving
-                industry needs and exceed customer expectations.
-              </p>
-            </div>
+  <!-- ====== Features Section Start -->
+  <section class="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
+    <div class="container">
+      <div class="-mx-4 flex flex-wrap">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-12 max-w-[485px] text-center lg:mb-[70px]">
+            <span class="mb-2 block text-lg font-semibold text-primary">
+              Features
+            </span>
+            <h2 class="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+              Core Values
+            </h2>
+            <p class="text-base text-body-color dark:text-dark-6">
+              We prioritize safety, integrity, innovation, collaboration, and customer focus—ensuring a safe
+              environment, ethical practices, creative solutions, teamwork, and exceptional service to meet evolving
+              industry needs and exceed customer expectations.
+            </p>
           </div>
         </div>
-        <div class="-mx-4 flex flex-wrap justify-center">
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div class="wow fadeInUp items-center justify-center text-center group mb-12" data-wow-delay=".1s">
-  
-              <div
-                class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary mx-auto">
-                <i data-lucide="hard-hat"></i>
-                <span
-                  class="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
-              </div>
-              <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
-                Safety
-              </h4>
-              <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                Our top priority is the safety of our employees, customers, and the community. We are dedicated to
-                maintaining a safe working environment and ensuring all operations are conducted with the highest safety
-                standards.
-              </p>
+      </div>
+      <div class="-mx-4 flex flex-wrap justify-center">
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="wow fadeInUp items-center justify-center text-center group mb-12" data-wow-delay=".1s">
+
+            <div
+              class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary mx-auto">
+              <i data-lucide="hard-hat"></i>
+              <span
+                class="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
             </div>
+            <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
+              Safety
+            </h4>
+            <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
+              Our top priority is the safety of our employees, customers, and the community. We are dedicated to
+              maintaining a safe working environment and ensuring all operations are conducted with the highest safety
+              standards.
+            </p>
           </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div class="wow fadeInUp items-center justify-center text-center group mb-12" data-wow-delay=".1s">
-              <div
-                class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary mx-auto">
-                <span
-                  class="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
-                <i data-lucide="target"></i>
-              </div>
-              <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
-                Integrity
-              </h4>
-              <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                We are committed to upholding the highest honesty, transparency, and ethical conduct in every action and
-                decision. Our integrity is the foundation of trust with our clients, partners, and communities. </p>
-  
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="wow fadeInUp items-center justify-center text-center group mb-12" data-wow-delay=".1s">
+            <div
+              class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary mx-auto">
+              <span
+                class="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
+              <i data-lucide="target"></i>
             </div>
+            <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
+              Integrity
+            </h4>
+            <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
+              We are committed to upholding the highest honesty, transparency, and ethical conduct in every action and
+              decision. Our integrity is the foundation of trust with our clients, partners, and communities. </p>
+
           </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div class="wow fadeInUp items-center justify-center text-center group mb-12" data-wow-delay=".1s">
-              <div
-                class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary mx-auto">
-                <span
-                  class="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
-                <i data-lucide="lightbulb"></i>
-              </div>
-              <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
-                Innovation
-              </h4>
-              <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                We foster a culture of creativity and continuous improvement, driving the development of innovative
-                solutions that meet the evolving needs of the Oil and Gas industry. Our commitment to innovation ensures
-                that we stay ahead in a competitive landscape.
-              </p>
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="wow fadeInUp items-center justify-center text-center group mb-12" data-wow-delay=".1s">
+            <div
+              class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary mx-auto">
+              <span
+                class="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
+              <i data-lucide="lightbulb"></i>
             </div>
+            <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
+              Innovation
+            </h4>
+            <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
+              We foster a culture of creativity and continuous improvement, driving the development of innovative
+              solutions that meet the evolving needs of the Oil and Gas industry. Our commitment to innovation ensures
+              that we stay ahead in a competitive landscape.
+            </p>
           </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div class="wow fadeInUp items-center justify-center text-center group mb-12" data-wow-delay=".1s">
-              <div
-                class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary mx-auto">
-                <span
-                  class="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
-                <i data-lucide="handshake"></i>
-              </div>
-              <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
-                Collaboration
-              </h4>
-              <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                We believe in the power of teamwork, open communication, and cooperation. By working together across
-                departments and with our external partners, we deliver superior results that benefit all stakeholders.
-              </p>
-  
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="wow fadeInUp items-center justify-center text-center group mb-12" data-wow-delay=".1s">
+            <div
+              class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary mx-auto">
+              <span
+                class="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
+              <i data-lucide="handshake"></i>
             </div>
+            <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
+              Collaboration
+            </h4>
+            <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
+              We believe in the power of teamwork, open communication, and cooperation. By working together across
+              departments and with our external partners, we deliver superior results that benefit all stakeholders.
+            </p>
+
           </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div class="wow fadeInUp items-center justify-center text-center group mb-12" data-wow-delay=".1s">
-              <div
-                class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary mx-auto">
-                <span
-                  class="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
-                <!-- <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="wow fadeInUp items-center justify-center text-center group mb-12" data-wow-delay=".1s">
+            <div
+              class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary mx-auto">
+              <span
+                class="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
+              <!-- <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M12.355 2.0614H5.21129C3.29879 2.0614 1.72379 3.6364 1.72379 5.5489V12.6927C1.72379 14.6052 3.29879 16.1802 5.21129 16.1802H12.355C14.2675 16.1802 15.8425 14.6052 15.8425 12.6927V5.60515C15.8988 3.6364 14.3238 2.0614 12.355 2.0614ZM13.3675 12.7489C13.3675 13.3114 12.9175 13.7614 12.355 13.7614H5.21129C4.64879 13.7614 4.19879 13.3114 4.19879 12.7489V5.60515C4.19879 5.04265 4.64879 4.59265 5.21129 4.59265H12.355C12.9175 4.59265 13.3675 5.04265 13.3675 5.60515V12.7489Z"
                     fill="white" />
@@ -699,28 +694,28 @@
                     d="M31.0863 20.0051H23.9425C22.03 20.0051 20.455 21.5801 20.455 23.4926V30.6364C20.455 32.5489 22.03 34.1239 23.9425 34.1239H31.0863C32.9988 34.1239 34.5738 32.5489 34.5738 30.6364V23.5489C34.5738 21.5801 32.9988 20.0051 31.0863 20.0051ZM32.0988 30.6926C32.0988 31.2551 31.6488 31.7051 31.0863 31.7051H23.9425C23.38 31.7051 22.93 31.2551 22.93 30.6926V23.5489C22.93 22.9864 23.38 22.5364 23.9425 22.5364H31.0863C31.6488 22.5364 32.0988 22.9864 32.0988 23.5489V30.6926Z"
                     fill="white" />
                 </svg> -->
-                <i data-lucide="users"></i>
-              </div>
-              <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
-                Customer Focus
-              </h4>
-              <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                We place our customers at the heart of everything. We build long-term relationships and deliver
-                exceptional value by understanding their needs and striving to exceed their expectations.
-              </p>
-  
+              <i data-lucide="users"></i>
             </div>
+            <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
+              Customer Focus
+            </h4>
+            <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
+              We place our customers at the heart of everything. We build long-term relationships and deliver
+              exceptional value by understanding their needs and striving to exceed their expectations.
+            </p>
+
           </div>
         </div>
       </div>
-    </section>
-    <!-- ====== Features Section End -->
+    </div>
+  </section>
+  <!-- ====== Features Section End -->
 
   <!-- ====== Footer Section Start -->
   <footer class="wow fadeInUp relative z-10 bg-[#090E34] pt-20 lg:pt-[100px]" data-wow-delay=".15s">
     <div class="container">
       <div class="-mx-4 flex flex-wrap">
-        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
+        <div class="ud-footer-column-pages">
           <div class="mb-10 w-full">
             <h4 class="mb-9 text-lg font-semibold text-white">Pages</h4>
             <ul>
@@ -747,7 +742,7 @@
             </ul>
           </div>
         </div>
-        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+        <div class="ud-footer-column-services">
           <div class="mb-10 w-full">
             <h4 class="mb-9 text-lg font-semibold text-white">Services</h4>
             <ul>
@@ -757,7 +752,7 @@
                 </a>
               </li>
               <li>
-                <a href=""/process-safety-management.html""
+                <a href="/process-safety-management.html"
                   class="mb-3 inline-block text-base text-gray-7 hover:text-primary">
                   Process Safety Management
                 </a>
@@ -771,7 +766,7 @@
             </ul>
           </div>
         </div>
-        <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+        <div class="ud-footer-column-services">
           <div class="mb-10 w-full">
             <h4 class="mb-9 text-lg font-semibold text-white">Services</h4>
             <ul>
@@ -781,9 +776,9 @@
                 </a>
               </li>
               <li>
-                <a href="/civil-structural.html" class="mb-3 inline-block text-base text-gray-7 hover:text-primary">
-                  Civil and Structural Engineering Services
-
+                <a href="/civil-structural.html"
+                  class="mb-3 inline-block text-base text-gray-7 hover:text-primary">Civil and Structural Engineering
+                  Services
                 </a>
               </li>
               <li>
