@@ -1,0 +1,25 @@
+name: AI Issue & PR Automation
+
+on:
+  issues:
+    types: [opened, edited]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  ai-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # AI PR Review
+      - name: Copilot PR Review
+        uses: github/copilot-review-action@latest
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Optional: Add AI comments to new issues
+      - name: AI Issue Comment
+        if: github.event_name == 'issues'
+        run: |
+          echo "AI triage placeholder: This issue will be analyzed by AI"
