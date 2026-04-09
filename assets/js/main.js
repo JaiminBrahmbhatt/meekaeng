@@ -211,6 +211,29 @@
   }
   /* ========  themeSwitcher End ========= */
 
+  // ===== Project Filter
+  const filterBar = document.querySelector('[aria-label="Filter projects by category"]');
+  if (filterBar) {
+    filterBar.addEventListener('click', function (e) {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      const category = btn.dataset.filter;
+      filterBar.querySelectorAll('.filter-btn').forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      document.querySelectorAll('.project-card').forEach(function (card) {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  }
+
   // ===== Contact Form
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {

@@ -28,7 +28,7 @@
         </div>
         <div class="flex items-center justify-between w-full px-4">
           <div>
-            <button id="navbarToggler"
+            <button type="button" id="navbarToggler" aria-label="Toggle navigation" aria-expanded="false"
               class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden">
               <span class="relative my-[6px] block h-[2px] w-[30px] bg-dark dark:bg-white"></span>
               <span class="relative my-[6px] block h-[2px] w-[30px] bg-dark dark:bg-white"></span>
@@ -204,82 +204,26 @@
       </div>
 
       <!-- Filter Bar -->
-      <style>
-        .filter-btn {
-          padding: 8px 20px;
-          border-radius: 999px;
-          border: 1.5px solid #e2e8f0;
-          background: white;
-          color: #64748b;
-          font-size: 13px;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.15s ease;
-          outline: 2px solid transparent;
-          outline-offset: 2px;
-        }
-        .filter-btn:hover { border-color: #2563eb; color: #2563eb; }
-        .filter-btn:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
-        .filter-btn.active {
-          background: #2563eb;
-          border-color: #2563eb;
-          color: white;
-          box-shadow: 0 2px 8px rgba(37,99,235,0.3);
-        }
-        .project-card { border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-        .project-card.hidden { display: none !important; }
-        #projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; }
-        @media (max-width: 767px) { #projects-grid { grid-template-columns: 1fr; } }
-        @media (min-width: 768px) and (max-width: 1023px) { #projects-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-        .project-metric-bar { background: #f8fafc; }
-        .project-tag { background: #f1f5f9; color: #475569; }
-        .dark .project-metric-bar { background: #1e293b; }
-        .dark .project-tag { background: #1e293b; color: #94a3b8; }
-        .project-card-desc {
-          display: -webkit-box;
-          -webkit-line-clamp: 4;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      </style>
       <div class="flex flex-wrap gap-2 justify-center mb-10" role="group" aria-label="Filter projects by category">
-        <button type="button" class="filter-btn active" aria-pressed="true" onclick="filterProjects('all', this)">All Projects</button>
-        <button type="button" class="filter-btn" aria-pressed="false" onclick="filterProjects('process', this)">Process Engineering</button>
-        <button type="button" class="filter-btn" aria-pressed="false" onclick="filterProjects('safety', this)">Safety &amp; Risk</button>
-        <button type="button" class="filter-btn" aria-pressed="false" onclick="filterProjects('pmc', this)">Project Management</button>
+        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All Projects</button>
+        <button type="button" class="filter-btn" data-filter="process" aria-pressed="false">Process Engineering</button>
+        <button type="button" class="filter-btn" data-filter="safety" aria-pressed="false">Safety &amp; Risk</button>
+        <button type="button" class="filter-btn" data-filter="pmc" aria-pressed="false">Project Management</button>
       </div>
-      <script>
-        function filterProjects(category, btn) {
-          document.querySelectorAll('.filter-btn').forEach(b => {
-            b.classList.remove('active');
-            b.setAttribute('aria-pressed', 'false');
-          });
-          btn.classList.add('active');
-          btn.setAttribute('aria-pressed', 'true');
-          document.querySelectorAll('.project-card').forEach(card => {
-            if (category === 'all' || card.dataset.category === category) {
-              card.classList.remove('hidden');
-            } else {
-              card.classList.add('hidden');
-            }
-          });
-        }
-      </script>
 
       <!-- Project Grid -->
       <div id="projects-grid">
         <!-- Card 01 -->
         <div class="project-card" data-category="process">
-          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8 project-card-inner">
             <div class="flex items-start justify-between mb-4">
-              <span style="background:#eff6ff;color:#1d4ed8;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
-              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">01</span>
+              <span class="badge-process inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
+              <span class="text-xs font-bold tracking-widest project-card-number">01</span>
             </div>
             <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Blowdown &amp; Depressurization Analysis for Butamer Reactors</h3>
             <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Conducted dynamic simulation and depressurization analysis to optimize high-temperature SIS trip responses for the Recycle Gas Compressor. Validated settle-out pressures and engineered high-rate emergency valves for critical blowdown scenarios.</p>
-            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
-              <span class="text-sm font-bold" style="color:#2563eb;">Emergency Valve Sizing</span>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar">
+              <span class="text-sm font-bold project-metric-value">Emergency Valve Sizing</span>
               <span class="text-xs text-body-color dark:text-dark-6">· SIS trip optimization</span>
             </div>
             <div class="flex flex-wrap gap-2">
@@ -292,15 +236,15 @@
 
         <!-- Card 02 -->
         <div class="project-card" data-category="process">
-          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8 project-card-inner">
             <div class="flex items-start justify-between mb-4">
-              <span style="background:#eff6ff;color:#1d4ed8;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
-              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">02</span>
+              <span class="badge-process inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
+              <span class="text-xs font-bold tracking-widest project-card-number">02</span>
             </div>
             <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Cycle Gas Cooling Water Upgrade</h3>
             <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Led adoption of CAVITROL HEX trim technology to eliminate cavitation and vibration. Developed P&amp;IDs, sized control valves, and led safety reviews during Detail Engineering and Execution phases.</p>
-            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
-              <span class="text-sm font-bold" style="color:#2563eb;">95% Scope Reduction</span>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar">
+              <span class="text-sm font-bold project-metric-value">95% Scope Reduction</span>
               <span class="text-xs text-body-color dark:text-dark-6">· from $4M initial estimate</span>
             </div>
             <div class="flex flex-wrap gap-2">
@@ -313,15 +257,15 @@
 
         <!-- Card 03 -->
         <div class="project-card" data-category="process">
-          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8 project-card-inner">
             <div class="flex items-start justify-between mb-4">
-              <span style="background:#eff6ff;color:#1d4ed8;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
-              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">03</span>
+              <span class="badge-process inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
+              <span class="text-xs font-bold tracking-widest project-card-number">03</span>
             </div>
             <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Fractionator Debottleneck Study</h3>
             <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Led a study to increase throughput at the Robstown, TX Natural Gas Fractionation Plant from 63K to 70K BPD. Used HYSYS and ASPEN EDR for simulation and thermal analysis, with direct startup support.</p>
-            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
-              <span class="text-sm font-bold" style="color:#2563eb;">63K → 70K BPD</span>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar">
+              <span class="text-sm font-bold project-metric-value">63K → 70K BPD</span>
               <span class="text-xs text-body-color dark:text-dark-6">· +11% capacity gain</span>
             </div>
             <div class="flex flex-wrap gap-2">
@@ -334,15 +278,15 @@
 
         <!-- Card 04 -->
         <div class="project-card" data-category="pmc">
-          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8 project-card-inner">
             <div class="flex items-start justify-between mb-4">
-              <span style="background:#f0fdf4;color:#16a34a;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Project Management</span>
-              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">04</span>
+              <span class="badge-pmc inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Project Management</span>
+              <span class="text-xs font-bold tracking-widest project-card-number">04</span>
             </div>
             <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Elevated Flare Upgrade</h3>
             <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Led engineering of a $4M Elevated Flare Upgrade, compressing the timeline from two years to six months and achieving key milestones within 12 weeks. Coordinated procurement and led a full HAZOP review.</p>
-            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
-              <span class="text-sm font-bold" style="color:#2563eb;">$4M · 6 Months</span>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar">
+              <span class="text-sm font-bold project-metric-value">$4M · 6 Months</span>
               <span class="text-xs text-body-color dark:text-dark-6">· vs. 2-year original schedule</span>
             </div>
             <div class="flex flex-wrap gap-2">
@@ -355,15 +299,15 @@
 
         <!-- Card 05 -->
         <div class="project-card" data-category="process">
-          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8 project-card-inner">
             <div class="flex items-start justify-between mb-4">
-              <span style="background:#eff6ff;color:#1d4ed8;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
-              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">05</span>
+              <span class="badge-process inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
+              <span class="text-xs font-bold tracking-widest project-card-number">05</span>
             </div>
             <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Dense Phase Ethane Energy Reduction Project</h3>
             <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Defined project scope and developed a 50% Gate 1 estimate of $90M aligned to the site's 2030 GHG Reduction goals. Led a $5M Tie-In scope and directed FEED, detailed engineering, and safety reviews.</p>
-            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
-              <span class="text-sm font-bold" style="color:#2563eb;">$90M Gate 1 Estimate</span>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar">
+              <span class="text-sm font-bold project-metric-value">$90M Gate 1 Estimate</span>
               <span class="text-xs text-body-color dark:text-dark-6">· 2030 GHG reduction target</span>
             </div>
             <div class="flex flex-wrap gap-2">
@@ -376,15 +320,15 @@
 
         <!-- Card 06 -->
         <div class="project-card" data-category="safety">
-          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8 project-card-inner">
             <div class="flex items-start justify-between mb-4">
-              <span style="background:#fef2f2;color:#dc2626;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Safety &amp; Risk</span>
-              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">06</span>
+              <span class="badge-safety inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Safety &amp; Risk</span>
+              <span class="text-xs font-bold tracking-widest project-card-number">06</span>
             </div>
             <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Ethane Header Protection</h3>
             <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Engineered solutions to lower the site Risk Category from RC2 to RC3. Developed and executed a scope to install SHE-critical transmitters integrated into the SIS for ESV trip functionality.</p>
-            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
-              <span class="text-sm font-bold" style="color:#2563eb;">90% Cost Reduction</span>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar">
+              <span class="text-sm font-bold project-metric-value">90% Cost Reduction</span>
               <span class="text-xs text-body-color dark:text-dark-6">· risk category downgrade</span>
             </div>
             <div class="flex flex-wrap gap-2">
@@ -397,15 +341,15 @@
 
         <!-- Card 07 -->
         <div class="project-card" data-category="pmc">
-          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8 project-card-inner">
             <div class="flex items-start justify-between mb-4">
-              <span style="background:#f0fdf4;color:#16a34a;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Project Management</span>
-              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">07</span>
+              <span class="badge-pmc inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Project Management</span>
+              <span class="text-xs font-bold tracking-widest project-card-number">07</span>
             </div>
             <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Sulfur Recovery Unit Upgrade</h3>
             <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Led Pre-FEED and FEED for a $25M 400 LT/D molten sulfur storage and transfer system with loading/unloading facilities. Developed P&amp;IDs, PFDs, equipment specs, and evaluated vendor quotes.</p>
-            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
-              <span class="text-sm font-bold" style="color:#2563eb;">$25M · 400 LT/D</span>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar">
+              <span class="text-sm font-bold project-metric-value">$25M · 400 LT/D</span>
               <span class="text-xs text-body-color dark:text-dark-6">· molten sulfur system</span>
             </div>
             <div class="flex flex-wrap gap-2">
@@ -418,15 +362,15 @@
 
         <!-- Card 08 -->
         <div class="project-card" data-category="safety">
-          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8 project-card-inner">
             <div class="flex items-start justify-between mb-4">
-              <span style="background:#fef2f2;color:#dc2626;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Safety &amp; Risk</span>
-              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">08</span>
+              <span class="badge-safety inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Safety &amp; Risk</span>
+              <span class="text-xs font-bold tracking-widest project-card-number">08</span>
             </div>
             <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Debutanizer Vacuum Prevention</h3>
             <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Resolved vacuum conditions during relief scenarios, mitigating RC2 SHE risks and preventing $5M in financial losses. Developed a Pro II model, P&amp;IDs, and rupture disc specifications, and led safety reviews during installation.</p>
-            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
-              <span class="text-sm font-bold" style="color:#2563eb;">75% TEC Reduction</span>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar">
+              <span class="text-sm font-bold project-metric-value">75% TEC Reduction</span>
               <span class="text-xs text-body-color dark:text-dark-6">· $5M financial risk mitigated</span>
             </div>
             <div class="flex flex-wrap gap-2">
@@ -439,15 +383,15 @@
 
         <!-- Card 09 -->
         <div class="project-card" data-category="pmc">
-          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8 project-card-inner">
             <div class="flex items-start justify-between mb-4">
-              <span style="background:#f0fdf4;color:#16a34a;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Project Management</span>
-              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">09</span>
+              <span class="badge-pmc inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Project Management</span>
+              <span class="text-xs font-bold tracking-widest project-card-number">09</span>
             </div>
             <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Third Process Gas Dryer</h3>
             <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Led Pre-FEED and Basis of Design for a $25M Olefins Process Gas Dryer to eliminate outages during catalyst changeouts. Directed FEED and Detailed Engineering for critical Tie-Ins with zero operational disruption.</p>
-            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
-              <span class="text-sm font-bold" style="color:#2563eb;">$25M · Zero Downtime</span>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar">
+              <span class="text-sm font-bold project-metric-value">$25M · Zero Downtime</span>
               <span class="text-xs text-body-color dark:text-dark-6">· seamless Tie-In integration</span>
             </div>
             <div class="flex flex-wrap gap-2">
