@@ -191,237 +191,269 @@
     </div>
   </div>
   <!-- ====== Banner Section End -->
-  <!-- ====== Pricing Section Start -->
-  <section id="project"
-    class="relative z-20 overflow-hidden bg-white dark:bg-dark pt-8 pb-8 lg:pt-[120px] lg:pb-[90px]">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap items-stretch justify-center -mx-4">
-        <!-- 1 -->
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3 pb-4">
-          <!-- div with shadow -->
-          <div
-            class="relative flex flex-col h-full z-10 px-8 py-10 mb-10 overflow-hidden bg-white rounded-xl dark:bg-dark-2 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-14">
-            <h2 class="mb-11 text-2xl font-semibold text-dark dark:text-white xl:leading-[1.21] xl:text-[42px]">
-              <span class="-ml-1 -tracking-[2px]">Blowdown and Depressurization Analysis for Butamer Reactors
-              </span>
-            </h2>
-            <div class="">
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Advanced Simulation: Conducted dynamic
-                simulation and depressurization analysis to optimize high-temperature SIS trip responses for the
-                Recycle
-                Gas Compressor.
-              </h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white"> Pressure Validation: Analyzed and
-                validated settle-out and maximum operating pressures to ensure safe operation.
+  <!-- ====== Projects Section Start -->
+  <section id="project" class="relative z-20 overflow-hidden bg-white dark:bg-dark pt-8 pb-8 lg:pt-[100px] lg:pb-[90px]">
+    <div class="container mx-auto px-4">
 
-              </h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white"> Emergency Valve Sizing: Engineered and
-                sized high-rate emergency valves and restriction orifices for critical blowdown scenarios.
-              </h5>
-            </div>
-          </div>
-        </div>
-        <!-- 2 -->
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3 pb-4">
-          <!-- div with shadow -->
-          <div
-            class="relative flex flex-col h-full z-10 px-8 py-10 mb-10 overflow-hidden bg-white rounded-xl dark:bg-dark-2 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-14">
+      <!-- Section Intro -->
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-dark dark:text-white mb-3">Our Work in Action</h2>
+        <p class="text-base text-body-color dark:text-dark-6 max-w-xl mx-auto leading-relaxed">
+          From process simulation to major capital projects, here's a sample of the engineering challenges we've solved for our clients.
+        </p>
+      </div>
 
-            <h2 class="mb-11 text-2xl font-semibold text-dark dark:text-white xl:leading-[1.21] xl:text-[42px]">
-              <span class="-ml-1 -tracking-[2px]">Cycle Gas Cooling Water Upgrade
-              </span>
-            </h2>
-            <div class="">
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">SCAVITROL HEX Technology: Led the
-                adoption
-                of CAVITROL HEX trim technology, reducing cavitation and vibration to improve valve performance and
-                reliability.
-                <h5 class="mb-5 text-lg font-medium text-dark dark:text-white"> Capital Efficiency: Delivered a 95%
-                  reduction in capital project scope, slashing initial estimates from $4M.
+      <!-- Filter Bar -->
+      <style>
+        .filter-btn {
+          padding: 8px 20px;
+          border-radius: 999px;
+          border: 1.5px solid #e2e8f0;
+          background: white;
+          color: #64748b;
+          font-size: 13px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.15s ease;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+        }
+        .filter-btn:hover { border-color: #2563eb; color: #2563eb; }
+        .filter-btn:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+        .filter-btn.active {
+          background: #2563eb;
+          border-color: #2563eb;
+          color: white;
+          box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+        }
+        .project-card { border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .project-card.hidden { display: none !important; }
+        #projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; }
+        @media (max-width: 767px) { #projects-grid { grid-template-columns: 1fr; } }
+        @media (min-width: 768px) and (max-width: 1023px) { #projects-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+        .project-metric-bar { background: #f8fafc; }
+        .project-tag { background: #f1f5f9; color: #475569; }
+        .dark .project-metric-bar { background: #1e293b; }
+        .dark .project-tag { background: #1e293b; color: #94a3b8; }
+        .project-card-desc {
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      </style>
+      <div class="flex flex-wrap gap-2 justify-center mb-10" role="group" aria-label="Filter projects by category">
+        <button type="button" class="filter-btn active" aria-pressed="true" onclick="filterProjects('all', this)">All Projects</button>
+        <button type="button" class="filter-btn" aria-pressed="false" onclick="filterProjects('process', this)">Process Engineering</button>
+        <button type="button" class="filter-btn" aria-pressed="false" onclick="filterProjects('safety', this)">Safety &amp; Risk</button>
+        <button type="button" class="filter-btn" aria-pressed="false" onclick="filterProjects('pmc', this)">Project Management</button>
+      </div>
+      <script>
+        function filterProjects(category, btn) {
+          document.querySelectorAll('.filter-btn').forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+          document.querySelectorAll('.project-card').forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        }
+      </script>
 
-                </h5>
-                <h5 class="mb-5 text-lg font-medium text-dark dark:text-white"> Engineering and Safety Leadership:
-                  Developed P&IDs, sized control valves, and led safety reviews during the Detail Engineering and
-                  Execution phases.</h5>
-              </h5>
+      <!-- Project Grid -->
+      <div id="projects-grid">
+        <!-- Card 01 -->
+        <div class="project-card" data-category="process">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+            <div class="flex items-start justify-between mb-4">
+              <span style="background:#eff6ff;color:#1d4ed8;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
+              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">01</span>
+            </div>
+            <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Blowdown &amp; Depressurization Analysis for Butamer Reactors</h3>
+            <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Conducted dynamic simulation and depressurization analysis to optimize high-temperature SIS trip responses for the Recycle Gas Compressor. Validated settle-out pressures and engineered high-rate emergency valves for critical blowdown scenarios.</p>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
+              <span class="text-sm font-bold" style="color:#2563eb;">Emergency Valve Sizing</span>
+              <span class="text-xs text-body-color dark:text-dark-6">· SIS trip optimization</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded project-tag">Dynamic Simulation</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">SIS</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">Blowdown</span>
             </div>
           </div>
         </div>
-        <!-- 3 -->
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3 pb-4">
-          <!-- div with shadow -->
-          <div
-            class="relative flex flex-col h-full z-10 px-8 py-10 mb-10 overflow-hidden bg-white rounded-xl dark:bg-dark-2 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-14">
-            <h2 class="mb-11 text-2xl font-semibold text-dark dark:text-white xl:leading-[1.21] xl:text-[42px]">
-              <span class="-ml-1 -tracking-[2px]"> Fractionator Debottleneck Study</span>
-            </h2>
-            <div class="">
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Capacity Expansion: Led a study to
-                increase
-                throughput at the Robstown, TX Natural Gas Fractionation Plant from 63K BPD to 70K BPD, driving
-                production gains.</h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Process Optimization: Analyzed and
-                optimized process equipment, leveraging HYSYS and ASPEN EDR for simulation and thermal analysis,
-                ensuring peak performance.
-              </h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Operational Integration: Provided direct
-                support during the startup of the upgraded 70K BPD Deethanizer Column, minimizing disruption to
-                existing
-                operations.
-              </h5>
-            </div>
-          </div>
-        </div>
-        <!-- 4 -->
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3 pb-4">
-          <!-- div with shadow -->
-          <div
-            class="relative flex flex-col h-full z-10 px-8 py-10 mb-10 overflow-hidden bg-white rounded-xl dark:bg-dark-2 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-14">
-            <h2 class="mb-11 text-2xl font-semibold text-dark dark:text-white xl:leading-[1.21] xl:text-[42px]">
-              <span class="-ml-1 -tracking-[2px]">Elevated Flare Upgrade</span>
-            </h2>
-            <div class="">
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Leadership and Accelerated Engineering:
-                Led
-                the development and engineering of a $4M Elevated Flare Upgrade project, compressing the timeline from
-                two years to six months and achieving key milestones within 12 weeks</h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Cross-Functional Collaboration:
-                Coordinated
-                procurement and expedited the delivery of critical components, ensuring mechanical completion on an
-                accelerated schedule.
-              </h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Safety and Risk Management: Led a HAZOP
-                review, ensuring safety compliance and successful project alignment with the forecasted budget.
-              </h5>
-            </div>
-          </div>
-        </div>
-        <!-- 5 -->
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3 pb-4">
-          <!-- div with shadow -->
-          <div
-            class="relative flex flex-col h-full z-10 px-8 py-10 mb-10 overflow-hidden bg-white rounded-xl dark:bg-dark-2 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-14">
-            <h2 class="mb-11 text-2xl font-semibold text-dark dark:text-white xl:leading-[1.21] xl:text-[42px]">
-              <span class="-ml-1 -tracking-[2px]">Dense Phase Ethane Energy Reduction Project
-              </span>
-            </h2>
-            <div class="">
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Strategic Project Scoping: Collaborated
-                to
-                define project scope and develop a 50% Gate 1 estimate of $90M, aligning with the site's 2030 GHG
-                Reduction goals.
-              </h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white"> Leadership in Tie-In Scope Development:
-                Led the development of a $5M Tie-In scope, ensuring seamless execution during an upcoming outage.
-              </h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white"> Comprehensive Engineering and Safety
-                Oversight: Directed FEED, detailed engineering, and safety reviews, ensuring efficient execution
-                during
-                the scheduled outage.
-              </h5>
-            </div>
-          </div>
-        </div>
-        <!-- 6 -->
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3 pb-4">
-          <!-- div with shadow -->
-          <div
-            class="relative flex flex-col h-full z-10 px-8 py-10 mb-10 overflow-hidden bg-white rounded-xl dark:bg-dark-2 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-14">
-            <h2 class="mb-11 text-2xl font-semibold text-dark dark:text-white xl:leading-[1.21] xl:text-[42px]">
-              <span class="-ml-1 -tracking-[2px]">Ethane Header Protection
-              </span>
-            </h2>
-            <div class="">
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Risk Reduction: Achieved a 90% reduction
-                in
-                the initial project estimate, successfully lowering the site's Risk Category 2 to Category 3 through
-                precise engineering.
-              </h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white"> System Reliability: Engineered design
-                solutions to enhance system reliability, ensuring timely responses to HIPPS Skid trips.
 
-              </h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white"> SHE Critical Installations: Developed
-                and
-                executed a scope to install SHE-critical transmitters, integrating them into the SIS for ESV trip
-                functionality.
-              </h5>
+        <!-- Card 02 -->
+        <div class="project-card" data-category="process">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+            <div class="flex items-start justify-between mb-4">
+              <span style="background:#eff6ff;color:#1d4ed8;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
+              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">02</span>
+            </div>
+            <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Cycle Gas Cooling Water Upgrade</h3>
+            <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Led adoption of CAVITROL HEX trim technology to eliminate cavitation and vibration. Developed P&amp;IDs, sized control valves, and led safety reviews during Detail Engineering and Execution phases.</p>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
+              <span class="text-sm font-bold" style="color:#2563eb;">95% Scope Reduction</span>
+              <span class="text-xs text-body-color dark:text-dark-6">· from $4M initial estimate</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded project-tag">Control Valves</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">P&amp;IDs</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">CAVITROL HEX</span>
             </div>
           </div>
         </div>
-        <!-- 7 -->
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3 pb-4">
-          <!-- div with shadow -->
-          <div
-            class="relative flex flex-col h-full z-10 px-8 py-10 mb-10 overflow-hidden bg-white rounded-xl dark:bg-dark-2 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-14">
-            <h2 class="mb-11 text-2xl font-semibold text-dark dark:text-white xl:leading-[1.21] xl:text-[42px]">
-              <span class="-ml-1 -tracking-[2px]">Sulfur Recovery Unit Upgrade
-              </span>
-            </h2>
-            <div class="">
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Project Leadership: Led Pre-FEED and FEED
-                for a $25M 400 LT/D molten sulfur storage and transfer system, including loading/unloading facilities.
-                <h5 class="mb-5 text-lg font-medium text-dark dark:text-white"> Engineering Deliverables: Developed
-                  P&IDs, PFDs, equipment specifications, safety systems, and evaluated vendor quotes, ensuring
-                  efficient
-                  execution.
 
-                </h5>
-                <h5 class="mb-5 text-lg font-medium text-dark dark:text-white"> Hydraulics Expertise: Engineered
-                  molten
-                  sulfur transfer lines with steam tracing and vent gas routing, optimizing safety and efficiency.
-                </h5>
-              </h5>
+        <!-- Card 03 -->
+        <div class="project-card" data-category="process">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+            <div class="flex items-start justify-between mb-4">
+              <span style="background:#eff6ff;color:#1d4ed8;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
+              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">03</span>
+            </div>
+            <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Fractionator Debottleneck Study</h3>
+            <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Led a study to increase throughput at the Robstown, TX Natural Gas Fractionation Plant from 63K to 70K BPD. Used HYSYS and ASPEN EDR for simulation and thermal analysis, with direct startup support.</p>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
+              <span class="text-sm font-bold" style="color:#2563eb;">63K → 70K BPD</span>
+              <span class="text-xs text-body-color dark:text-dark-6">· +11% capacity gain</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded project-tag">HYSYS</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">ASPEN EDR</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">Debottlenecking</span>
             </div>
           </div>
         </div>
-        <!-- 8 -->
 
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3 pb-4">
-          <!-- div with shadow -->
-          <div
-            class="relative flex flex-col h-full z-10 px-8 py-10 mb-10 overflow-hidden bg-white rounded-xl dark:bg-dark-2 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-14">
-            <h2 class="mb-11 text-2xl font-semibold text-dark dark:text-white xl:leading-[1.21] xl:text-[42px]">
-              <span class="-ml-1 -tracking-[2px]">Debutanizer Vacuum Prevention</span>
-            </h2>
-            <div class="">
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Strategic Cost Optimization: Achieved a 75%
-                reduction in the Total Estimated Cost (TEC) at Gate 1 by strategically implementing rupture disk
-                installations, significantly improving project efficiency.</h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Cross-Functional Collaboration: Partnered
-                with a diverse team to resolve vacuum conditions in the tower during relief scenarios, mitigating RC2
-                SHE risks and preventing potential financial losses estimated at $5M.
-              </h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Technical Development: Developed a Pro II
-                model, P&IDs, and rupture disc specifications, ensuring precise and effective execution.</h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Leadership in Safety: Led comprehensive
-                safety reviews during installation and execution, ensuring adherence to safety standards.
-              </h5>
+        <!-- Card 04 -->
+        <div class="project-card" data-category="pmc">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+            <div class="flex items-start justify-between mb-4">
+              <span style="background:#f0fdf4;color:#16a34a;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Project Management</span>
+              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">04</span>
+            </div>
+            <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Elevated Flare Upgrade</h3>
+            <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Led engineering of a $4M Elevated Flare Upgrade, compressing the timeline from two years to six months and achieving key milestones within 12 weeks. Coordinated procurement and led a full HAZOP review.</p>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
+              <span class="text-sm font-bold" style="color:#2563eb;">$4M · 6 Months</span>
+              <span class="text-xs text-body-color dark:text-dark-6">· vs. 2-year original schedule</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded project-tag">HAZOP</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">Procurement</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">Flare Systems</span>
             </div>
           </div>
         </div>
-        <!-- 9 -->
-        <div class="w-full px-4 md:w-1/2 lg:w-1/3 pb-4">
-          <!-- div with shadow -->
-          <div
-            class="relative flex flex-col h-full z-10 px-8 py-10 mb-10 overflow-hidden bg-white rounded-xl dark:bg-dark-2 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-14">
-            <h2 class="mb-11 text-2xl font-semibold text-dark dark:text-white xl:leading-[1.21] xl:text-[42px]">
-              <span class="-ml-1 -tracking-[2px]">Third Process Gas Dryer</span>
-            </h2>
-            <div class="">
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Strategic Design and Pre-FEED
-                Development:
-                Led Pre-FEED and Basis of Design for a $25M Olefins Process Gas Dryer project, aimed at eliminating
-                unit
-                outages during dryer catalyst changeouts, enhancing operational efficiency.</h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Comprehensive Engineering Execution:
-                Directed FEED and Detailed Engineering for critical Tie-Ins, successfully integrating the Process Gas
-                Dryer without disrupting operations.
-              </h5>
-              <h5 class="mb-5 text-lg font-medium text-dark dark:text-white">Detailed Technical Documentation:
-                Developed
-                key project deliverables, including the Basis of Design, PFDs, P&IDs, H&MBs, and Long Lead Equipment
-                Specifications, while drafting the Scope of Work for FEED contractors.</h5>
+
+        <!-- Card 05 -->
+        <div class="project-card" data-category="process">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+            <div class="flex items-start justify-between mb-4">
+              <span style="background:#eff6ff;color:#1d4ed8;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Process Engineering</span>
+              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">05</span>
+            </div>
+            <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Dense Phase Ethane Energy Reduction Project</h3>
+            <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Defined project scope and developed a 50% Gate 1 estimate of $90M aligned to the site's 2030 GHG Reduction goals. Led a $5M Tie-In scope and directed FEED, detailed engineering, and safety reviews.</p>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
+              <span class="text-sm font-bold" style="color:#2563eb;">$90M Gate 1 Estimate</span>
+              <span class="text-xs text-body-color dark:text-dark-6">· 2030 GHG reduction target</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded project-tag">FEED</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">GHG Reduction</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">Tie-In Scope</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 06 -->
+        <div class="project-card" data-category="safety">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+            <div class="flex items-start justify-between mb-4">
+              <span style="background:#fef2f2;color:#dc2626;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Safety &amp; Risk</span>
+              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">06</span>
+            </div>
+            <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Ethane Header Protection</h3>
+            <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Engineered solutions to lower the site Risk Category from RC2 to RC3. Developed and executed a scope to install SHE-critical transmitters integrated into the SIS for ESV trip functionality.</p>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
+              <span class="text-sm font-bold" style="color:#2563eb;">90% Cost Reduction</span>
+              <span class="text-xs text-body-color dark:text-dark-6">· risk category downgrade</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded project-tag">HIPPS</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">SIS</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">ESV</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 07 -->
+        <div class="project-card" data-category="pmc">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+            <div class="flex items-start justify-between mb-4">
+              <span style="background:#f0fdf4;color:#16a34a;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Project Management</span>
+              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">07</span>
+            </div>
+            <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Sulfur Recovery Unit Upgrade</h3>
+            <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Led Pre-FEED and FEED for a $25M 400 LT/D molten sulfur storage and transfer system with loading/unloading facilities. Developed P&amp;IDs, PFDs, equipment specs, and evaluated vendor quotes.</p>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
+              <span class="text-sm font-bold" style="color:#2563eb;">$25M · 400 LT/D</span>
+              <span class="text-xs text-body-color dark:text-dark-6">· molten sulfur system</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded project-tag">Pre-FEED</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">FEED</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">Steam Tracing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 08 -->
+        <div class="project-card" data-category="safety">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+            <div class="flex items-start justify-between mb-4">
+              <span style="background:#fef2f2;color:#dc2626;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Safety &amp; Risk</span>
+              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">08</span>
+            </div>
+            <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Debutanizer Vacuum Prevention</h3>
+            <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Resolved vacuum conditions during relief scenarios, mitigating RC2 SHE risks and preventing $5M in financial losses. Developed a Pro II model, P&amp;IDs, and rupture disc specifications, and led safety reviews during installation.</p>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
+              <span class="text-sm font-bold" style="color:#2563eb;">75% TEC Reduction</span>
+              <span class="text-xs text-body-color dark:text-dark-6">· $5M financial risk mitigated</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded project-tag">Pro II</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">Rupture Disc</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">Relief Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 09 -->
+        <div class="project-card" data-category="pmc">
+          <div class="relative flex flex-col h-full bg-white dark:bg-dark-2 rounded-xl shadow-sm px-7 py-8" style="border: 1px solid #e8edf2;">
+            <div class="flex items-start justify-between mb-4">
+              <span style="background:#f0fdf4;color:#16a34a;" class="inline-block px-3 py-1 rounded text-xs font-semibold uppercase tracking-wide">Project Management</span>
+              <span class="text-xs font-bold tracking-widest" style="color:#cbd5e1;">09</span>
+            </div>
+            <h3 class="text-lg font-bold text-dark dark:text-white leading-snug mb-3">Third Process Gas Dryer</h3>
+            <p class="text-sm text-body-color dark:text-dark-6 leading-relaxed mb-4 flex-1 project-card-desc">Led Pre-FEED and Basis of Design for a $25M Olefins Process Gas Dryer to eliminate outages during catalyst changeouts. Directed FEED and Detailed Engineering for critical Tie-Ins with zero operational disruption.</p>
+            <div class="flex items-center gap-3 mb-4 project-metric-bar" style="border-left:3px solid #2563eb;padding:10px 14px;border-radius:0 6px 6px 0;">
+              <span class="text-sm font-bold" style="color:#2563eb;">$25M · Zero Downtime</span>
+              <span class="text-xs text-body-color dark:text-dark-6">· seamless Tie-In integration</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded project-tag">Pre-FEED</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">P&amp;IDs</span>
+              <span class="text-xs px-2 py-1 rounded project-tag">H&amp;MBs</span>
             </div>
           </div>
         </div>
@@ -429,7 +461,7 @@
       </div>
     </div>
   </section>
-  <!-- ====== Pricing Section End -->
+  <!-- ====== Projects Section End -->
 
   <!-- ====== Contact Start ====== -->
   <section id="contact" class="relative py-20 md:py-[120px]">
